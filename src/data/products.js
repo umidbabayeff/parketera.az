@@ -52,7 +52,7 @@ export const categories = [
 
 export const products = [
   {
-    "id": 1001,
+    "id": 1,
     "name": "Mat Bambuk",
     "categoryId": 1,
     "unit": "m²",
@@ -78,7 +78,7 @@ export const products = [
     ]
   },
   {
-    "id": 1002,
+    "id": 2,
     "name": "Parlaq Bambuk",
     "categoryId": 1,
     "unit": "m²",
@@ -104,15 +104,15 @@ export const products = [
     ]
   },
   {
-    "id": 1003,
+    "id": 3,
     "name": "Massiv Bambook",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "1,943",
     "dimensions": "920x132x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -130,15 +130,15 @@ export const products = [
     ]
   },
   {
-    "id": 1004,
+    "id": 4,
     "name": "Bambook PO001",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -156,15 +156,15 @@ export const products = [
     ]
   },
   {
-    "id": 1005,
+    "id": 5,
     "name": "Bambook PO002",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x16",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -182,15 +182,15 @@ export const products = [
     ]
   },
   {
-    "id": 1006,
+    "id": 6,
     "name": "Bambook N001",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x17",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -208,15 +208,15 @@ export const products = [
     ]
   },
   {
-    "id": 1007,
+    "id": 7,
     "name": "Bambook HP02",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x18",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -234,15 +234,15 @@ export const products = [
     ]
   },
   {
-    "id": 1008,
+    "id": 8,
     "name": "Bambook N003",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x19",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -260,15 +260,15 @@ export const products = [
     ]
   },
   {
-    "id": 1009,
+    "id": 9,
     "name": "Bambook N004",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x20",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -286,15 +286,15 @@ export const products = [
     ]
   },
   {
-    "id": 1010,
+    "id": 10,
     "name": "Bambook HP04",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x21",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -312,15 +312,15 @@ export const products = [
     ]
   },
   {
-    "id": 1011,
+    "id": 11,
     "name": "Bambook EK004",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x22",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -338,15 +338,15 @@ export const products = [
     ]
   },
   {
-    "id": 1012,
+    "id": 12,
     "name": "Bambook N005",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x23",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -364,15 +364,15 @@ export const products = [
     ]
   },
   {
-    "id": 1013,
+    "id": 13,
     "name": "Bambook EK006",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x24",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -390,15 +390,15 @@ export const products = [
     ]
   },
   {
-    "id": 1014,
+    "id": 14,
     "name": "Bambook EK009",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x25",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -416,15 +416,15 @@ export const products = [
     ]
   },
   {
-    "id": 1015,
+    "id": 15,
     "name": "Bambook EK010",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x26",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -442,15 +442,15 @@ export const products = [
     ]
   },
   {
-    "id": 1016,
+    "id": 16,
     "name": "Bambook EK015",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x27",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -468,15 +468,15 @@ export const products = [
     ]
   },
   {
-    "id": 1017,
+    "id": 17,
     "name": "Bambook EK017",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x28",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -494,15 +494,15 @@ export const products = [
     ]
   },
   {
-    "id": 1018,
+    "id": 18,
     "name": "Bambook EK018",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x29",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -520,15 +520,15 @@ export const products = [
     ]
   },
   {
-    "id": 1019,
+    "id": 19,
     "name": "Bambook EK020",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x30",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -546,15 +546,15 @@ export const products = [
     ]
   },
   {
-    "id": 1020,
+    "id": 20,
     "name": "Bambook EK027",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x31",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -572,15 +572,15 @@ export const products = [
     ]
   },
   {
-    "id": 1021,
+    "id": 21,
     "name": "Bambook N19",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x32",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -598,15 +598,15 @@ export const products = [
     ]
   },
   {
-    "id": 1022,
+    "id": 22,
     "name": "Bambook N2011",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x33",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -624,15 +624,15 @@ export const products = [
     ]
   },
   {
-    "id": 1023,
+    "id": 23,
     "name": "Bambook N230",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x34",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -650,15 +650,15 @@ export const products = [
     ]
   },
   {
-    "id": 1024,
+    "id": 24,
     "name": "Bambook N312",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x35",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -676,15 +676,15 @@ export const products = [
     ]
   },
   {
-    "id": 1025,
+    "id": 25,
     "name": "Bambook N212",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x36",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -702,15 +702,15 @@ export const products = [
     ]
   },
   {
-    "id": 1026,
+    "id": 26,
     "name": "Bambook N215",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x37",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -728,15 +728,15 @@ export const products = [
     ]
   },
   {
-    "id": 1027,
+    "id": 27,
     "name": "Bambook HP01",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x38",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -754,15 +754,15 @@ export const products = [
     ]
   },
   {
-    "id": 1028,
+    "id": 28,
     "name": "Bambook HP03",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x39",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -780,15 +780,15 @@ export const products = [
     ]
   },
   {
-    "id": 1029,
+    "id": 29,
     "name": "Bambook HP04",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x40",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -806,15 +806,15 @@ export const products = [
     ]
   },
   {
-    "id": 1030,
+    "id": 30,
     "name": "Bambook HP05",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x41",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -832,15 +832,15 @@ export const products = [
     ]
   },
   {
-    "id": 1031,
+    "id": 31,
     "name": "Bambook HP06",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x42",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -858,15 +858,15 @@ export const products = [
     ]
   },
   {
-    "id": 1032,
+    "id": 32,
     "name": "Bambook HP07",
-    "categoryId": 1,
+    "categoryId": 8,
     "unit": "m²",
     "boxArea": "2,652",
     "dimensions": "1020x130x43",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/chemistry.png",
     "description": "",
     "specs": [
       {
@@ -884,7 +884,7 @@ export const products = [
     ]
   },
   {
-    "id": 1033,
+    "id": 33,
     "name": "Massiv Chevron",
     "categoryId": 1,
     "unit": "m²",
@@ -910,9 +910,9 @@ export const products = [
     ]
   },
   {
-    "id": 1034,
+    "id": 34,
     "name": "Massiv Herringbone",
-    "categoryId": 1,
+    "categoryId": 2,
     "unit": "m²",
     "boxArea": "1,9325",
     "dimensions": "610x132x14",
@@ -936,7 +936,7 @@ export const products = [
     ]
   },
   {
-    "id": 2035,
+    "id": 35,
     "name": "Herringbone N 001",
     "categoryId": 2,
     "unit": "m²",
@@ -962,7 +962,7 @@ export const products = [
     ]
   },
   {
-    "id": 2036,
+    "id": 36,
     "name": "Herringbone N 003",
     "categoryId": 2,
     "unit": "m²",
@@ -988,7 +988,7 @@ export const products = [
     ]
   },
   {
-    "id": 2037,
+    "id": 37,
     "name": "Herringbone N 004",
     "categoryId": 2,
     "unit": "m²",
@@ -1014,7 +1014,7 @@ export const products = [
     ]
   },
   {
-    "id": 2038,
+    "id": 38,
     "name": "Herringbone N 005",
     "categoryId": 2,
     "unit": "m²",
@@ -1040,7 +1040,7 @@ export const products = [
     ]
   },
   {
-    "id": 2039,
+    "id": 39,
     "name": "Herringbone N 007",
     "categoryId": 2,
     "unit": "m²",
@@ -1066,7 +1066,7 @@ export const products = [
     ]
   },
   {
-    "id": 2040,
+    "id": 40,
     "name": "Herringbone N 03T",
     "categoryId": 2,
     "unit": "m²",
@@ -1092,7 +1092,7 @@ export const products = [
     ]
   },
   {
-    "id": 2041,
+    "id": 41,
     "name": "Herringbone N 019",
     "categoryId": 2,
     "unit": "m²",
@@ -1118,7 +1118,7 @@ export const products = [
     ]
   },
   {
-    "id": 2042,
+    "id": 42,
     "name": "Herringbone N 31",
     "categoryId": 2,
     "unit": "m²",
@@ -1144,7 +1144,7 @@ export const products = [
     ]
   },
   {
-    "id": 2043,
+    "id": 43,
     "name": "Herringbone N 91",
     "categoryId": 2,
     "unit": "m²",
@@ -1170,7 +1170,7 @@ export const products = [
     ]
   },
   {
-    "id": 2044,
+    "id": 44,
     "name": "Herringbone N 2011",
     "categoryId": 2,
     "unit": "m²",
@@ -1196,7 +1196,7 @@ export const products = [
     ]
   },
   {
-    "id": 2045,
+    "id": 45,
     "name": "Herringbone N 215",
     "categoryId": 2,
     "unit": "m²",
@@ -1222,7 +1222,7 @@ export const products = [
     ]
   },
   {
-    "id": 2046,
+    "id": 46,
     "name": "Herringbone N 230",
     "categoryId": 2,
     "unit": "m²",
@@ -1248,7 +1248,7 @@ export const products = [
     ]
   },
   {
-    "id": 2047,
+    "id": 47,
     "name": "Herringbone N 303",
     "categoryId": 2,
     "unit": "m²",
@@ -1274,7 +1274,7 @@ export const products = [
     ]
   },
   {
-    "id": 2048,
+    "id": 48,
     "name": "Herringbone N 314",
     "categoryId": 2,
     "unit": "m²",
@@ -1300,7 +1300,7 @@ export const products = [
     ]
   },
   {
-    "id": 2049,
+    "id": 49,
     "name": "Herringbone N 1",
     "categoryId": 2,
     "unit": "m²",
@@ -1326,7 +1326,7 @@ export const products = [
     ]
   },
   {
-    "id": 2050,
+    "id": 50,
     "name": "Herringbone N 5",
     "categoryId": 2,
     "unit": "m²",
@@ -1352,7 +1352,7 @@ export const products = [
     ]
   },
   {
-    "id": 2051,
+    "id": 51,
     "name": "Herringbone N 7",
     "categoryId": 2,
     "unit": "m²",
@@ -1378,7 +1378,7 @@ export const products = [
     ]
   },
   {
-    "id": 2052,
+    "id": 52,
     "name": "Herringbone N 8",
     "categoryId": 2,
     "unit": "m²",
@@ -1404,7 +1404,7 @@ export const products = [
     ]
   },
   {
-    "id": 2053,
+    "id": 53,
     "name": "Herringbone N 3",
     "categoryId": 2,
     "unit": "m²",
@@ -1430,7 +1430,7 @@ export const products = [
     ]
   },
   {
-    "id": 2054,
+    "id": 54,
     "name": "Herringbone N 4",
     "categoryId": 2,
     "unit": "m²",
@@ -1456,7 +1456,7 @@ export const products = [
     ]
   },
   {
-    "id": 3055,
+    "id": 55,
     "name": "Merbau - 120 Medium",
     "categoryId": 3,
     "unit": "m²",
@@ -1482,7 +1482,7 @@ export const products = [
     ]
   },
   {
-    "id": 3056,
+    "id": 56,
     "name": "Merbau - 120 Light",
     "categoryId": 3,
     "unit": "m²",
@@ -1508,7 +1508,7 @@ export const products = [
     ]
   },
   {
-    "id": 3057,
+    "id": 57,
     "name": "Merbau - 120 Dark",
     "categoryId": 3,
     "unit": "m²",
@@ -1534,7 +1534,7 @@ export const products = [
     ]
   },
   {
-    "id": 3058,
+    "id": 58,
     "name": "Merbau - 90 Medium",
     "categoryId": 3,
     "unit": "m²",
@@ -1560,7 +1560,7 @@ export const products = [
     ]
   },
   {
-    "id": 3059,
+    "id": 59,
     "name": "Merbau - 90 Light",
     "categoryId": 3,
     "unit": "m²",
@@ -1586,7 +1586,7 @@ export const products = [
     ]
   },
   {
-    "id": 3060,
+    "id": 60,
     "name": "Merbau - 90 Dark",
     "categoryId": 3,
     "unit": "m²",
@@ -1612,7 +1612,7 @@ export const products = [
     ]
   },
   {
-    "id": 3061,
+    "id": 61,
     "name": "Armosia 120",
     "categoryId": 3,
     "unit": "m²",
@@ -1638,7 +1638,7 @@ export const products = [
     ]
   },
   {
-    "id": 3062,
+    "id": 63,
     "name": "Armosia 90",
     "categoryId": 3,
     "unit": "m²",
@@ -1664,7 +1664,7 @@ export const products = [
     ]
   },
   {
-    "id": 3063,
+    "id": 62,
     "name": "Teak 120",
     "categoryId": 3,
     "unit": "m²",
@@ -1690,7 +1690,7 @@ export const products = [
     ]
   },
   {
-    "id": 4064,
+    "id": 63,
     "name": "EK Herringbone Natural",
     "categoryId": 4,
     "unit": "m²",
@@ -1716,7 +1716,7 @@ export const products = [
     ]
   },
   {
-    "id": 4065,
+    "id": 64,
     "name": "EK Herringbone Coffee",
     "categoryId": 4,
     "unit": "m²",
@@ -1742,7 +1742,7 @@ export const products = [
     ]
   },
   {
-    "id": 4066,
+    "id": 65,
     "name": "EK Herringbone PA9GR-M",
     "categoryId": 4,
     "unit": "m²",
@@ -1768,7 +1768,7 @@ export const products = [
     ]
   },
   {
-    "id": 4067,
+    "id": 66,
     "name": "EK Herringbone PA9GR-Cream",
     "categoryId": 4,
     "unit": "m²",
@@ -1794,7 +1794,7 @@ export const products = [
     ]
   },
   {
-    "id": 4068,
+    "id": 67,
     "name": "EK Herringbone Venge N5540",
     "categoryId": 4,
     "unit": "m²",
@@ -1820,12 +1820,12 @@ export const products = [
     ]
   },
   {
-    "id": 5069,
+    "id": 68,
     "name": "BalticWood 1R Nougat",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1833,7 +1833,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1846,12 +1846,12 @@ export const products = [
     ]
   },
   {
-    "id": 5070,
+    "id": 69,
     "name": "BalticWood 1R Amber",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1859,7 +1859,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1872,12 +1872,12 @@ export const products = [
     ]
   },
   {
-    "id": 5071,
+    "id": 70,
     "name": "BalticWood 1R Taupe",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1885,7 +1885,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1898,12 +1898,12 @@ export const products = [
     ]
   },
   {
-    "id": 5072,
+    "id": 71,
     "name": "BalticWood 1R Coffee",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1911,7 +1911,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1924,12 +1924,12 @@ export const products = [
     ]
   },
   {
-    "id": 5073,
+    "id": 72,
     "name": "BalticWood 1R Cream",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1937,7 +1937,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1950,12 +1950,12 @@ export const products = [
     ]
   },
   {
-    "id": 5074,
+    "id": 73,
     "name": "BalticWood 1R Smooky",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1963,7 +1963,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -1976,12 +1976,12 @@ export const products = [
     ]
   },
   {
-    "id": 5075,
+    "id": 74,
     "name": "BalticWood 1R Black Amber",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -1989,7 +1989,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2002,12 +2002,12 @@ export const products = [
     ]
   },
   {
-    "id": 5076,
+    "id": 75,
     "name": "BalticWood 1R Forsty",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,439",
-    "dimensions": "1080x148x13.3",
+    "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2015,7 +2015,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x148x13.3 mm"
+        "value": "1080x148x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2028,12 +2028,12 @@ export const products = [
     ]
   },
   {
-    "id": 5077,
+    "id": 76,
     "name": "BalticWood 1R Villa Cream 182",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,769",
-    "dimensions": "1080x182x13.3",
+    "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2041,7 +2041,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x182x13.3 mm"
+        "value": "1080x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2054,12 +2054,12 @@ export const products = [
     ]
   },
   {
-    "id": 5078,
+    "id": 77,
     "name": "BalticWood 1R Villa Amber 182",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,769",
-    "dimensions": "1080x182x13.3",
+    "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2067,7 +2067,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x182x13.3 mm"
+        "value": "1080x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2080,12 +2080,12 @@ export const products = [
     ]
   },
   {
-    "id": 5079,
+    "id": 78,
     "name": "BalticWood 1R Villa Forsty 182",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,769",
-    "dimensions": "1080x182x13.3",
+    "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2093,7 +2093,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x182x13.3 mm"
+        "value": "1080x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2106,12 +2106,12 @@ export const products = [
     ]
   },
   {
-    "id": 5080,
+    "id": 79,
     "name": "BalticWood 1R Villa Smoky 182",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,769",
-    "dimensions": "1080x182x13.3",
+    "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2119,7 +2119,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1080x182x13.3 mm"
+        "value": "1080x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2132,12 +2132,12 @@ export const products = [
     ]
   },
   {
-    "id": 5081,
+    "id": 80,
     "name": "BalticWood 3R Forsty",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2145,7 +2145,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2158,12 +2158,12 @@ export const products = [
     ]
   },
   {
-    "id": 5082,
+    "id": 81,
     "name": "BalticWood 3R Taupe",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2171,7 +2171,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2184,12 +2184,12 @@ export const products = [
     ]
   },
   {
-    "id": 5083,
+    "id": 82,
     "name": "BalticWood 3R Amber",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2197,7 +2197,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2210,12 +2210,12 @@ export const products = [
     ]
   },
   {
-    "id": 5084,
+    "id": 84,
     "name": "BalticWood 3R Black Amber",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2223,7 +2223,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2236,12 +2236,12 @@ export const products = [
     ]
   },
   {
-    "id": 5085,
+    "id": 85,
     "name": "BalticWood 3R Smoky",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2249,7 +2249,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2262,12 +2262,12 @@ export const products = [
     ]
   },
   {
-    "id": 5086,
+    "id": 86,
     "name": "BalticWood 3R Cream",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2275,7 +2275,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2288,12 +2288,12 @@ export const products = [
     ]
   },
   {
-    "id": 5087,
+    "id": 87,
     "name": "BalticWood 3R Nougat",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2301,7 +2301,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2314,12 +2314,12 @@ export const products = [
     ]
   },
   {
-    "id": 5088,
+    "id": 88,
     "name": "BalticWood 3R Coffee",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "3,58722",
-    "dimensions": "2190x182x13.3",
+    "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2327,7 +2327,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "2190x182x13.3 mm"
+        "value": "2190x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2340,12 +2340,12 @@ export const products = [
     ]
   },
   {
-    "id": 5089,
+    "id": 89,
     "name": "BalticWood 3R Nougat 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2353,7 +2353,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2366,12 +2366,12 @@ export const products = [
     ]
   },
   {
-    "id": 5090,
+    "id": 90,
     "name": "BalticWood 3R Amber 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2379,7 +2379,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2392,12 +2392,12 @@ export const products = [
     ]
   },
   {
-    "id": 5091,
+    "id": 100,
     "name": "BalticWood 3R Taupe 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2405,7 +2405,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2418,12 +2418,12 @@ export const products = [
     ]
   },
   {
-    "id": 5092,
+    "id": 101,
     "name": "BalticWood 3R Black Amber 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2431,7 +2431,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2444,12 +2444,12 @@ export const products = [
     ]
   },
   {
-    "id": 5093,
+    "id": 102,
     "name": "BalticWood 3R Coffee 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2457,7 +2457,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2470,12 +2470,12 @@ export const products = [
     ]
   },
   {
-    "id": 5094,
+    "id": 103,
     "name": "BalticWood 3R Cream 1090",
     "categoryId": 5,
     "unit": "m²",
     "boxArea": "1,78542",
-    "dimensions": "1090x182x13.3",
+    "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
     "image": "/images/engineered.png",
@@ -2483,7 +2483,7 @@ export const products = [
     "specs": [
       {
         "label": "Ölçü",
-        "value": "1090x182x13.3 mm"
+        "value": "1090x182x13,3 mm"
       },
       {
         "label": "1 qutuda",
@@ -2496,8 +2496,8 @@ export const products = [
     ]
   },
   {
-    "id": 6095,
-    "name": "Tovcol MS Start 15kg",
+    "id": 104,
+    "name": "Tovcol MS Start 15g",
     "categoryId": 6,
     "unit": "əd",
     "boxArea": null,
@@ -2514,7 +2514,7 @@ export const products = [
     ]
   },
   {
-    "id": 6096,
+    "id": 104,
     "name": "Tovcol MS 15kg",
     "categoryId": 6,
     "unit": "əd",
@@ -2532,7 +2532,7 @@ export const products = [
     ]
   },
   {
-    "id": 6097,
+    "id": 104,
     "name": "Tovcol TA 11kg",
     "categoryId": 6,
     "unit": "əd",
@@ -2550,7 +2550,7 @@ export const products = [
     ]
   },
   {
-    "id": 6098,
+    "id": 104,
     "name": "Tovcol TP2C 11kg",
     "categoryId": 6,
     "unit": "əd",
@@ -2568,97 +2568,7 @@ export const products = [
     ]
   },
   {
-    "id": 7099,
-    "name": "Home Maxi Glossy 5lt",
-    "categoryId": 7,
-    "unit": "əd",
-    "boxArea": null,
-    "dimensions": null,
-    "price": null,
-    "inStock": true,
-    "image": "/images/chemistry.png",
-    "description": "",
-    "specs": [
-      {
-        "label": "Ölçü vahidi",
-        "value": "əd"
-      }
-    ]
-  },
-  {
-    "id": 7100,
-    "name": "Home Maxi Semi Glossy 5lt",
-    "categoryId": 7,
-    "unit": "əd",
-    "boxArea": null,
-    "dimensions": null,
-    "price": null,
-    "inStock": true,
-    "image": "/images/chemistry.png",
-    "description": "",
-    "specs": [
-      {
-        "label": "Ölçü vahidi",
-        "value": "əd"
-      }
-    ]
-  },
-  {
-    "id": 7101,
-    "name": "İdrofondo H20 5lt",
-    "categoryId": 7,
-    "unit": "əd",
-    "boxArea": null,
-    "dimensions": null,
-    "price": null,
-    "inStock": true,
-    "image": "/images/chemistry.png",
-    "description": "",
-    "specs": [
-      {
-        "label": "Ölçü vahidi",
-        "value": "əd"
-      }
-    ]
-  },
-  {
-    "id": 7102,
-    "name": "MAXI OIL GLOSSY 2,5lt",
-    "categoryId": 7,
-    "unit": "əd",
-    "boxArea": null,
-    "dimensions": null,
-    "price": null,
-    "inStock": true,
-    "image": "/images/chemistry.png",
-    "description": "",
-    "specs": [
-      {
-        "label": "Ölçü vahidi",
-        "value": "əd"
-      }
-    ]
-  },
-  {
-    "id": 7103,
-    "name": "MAXI OIL SEMI GLOSSY 2,5lt",
-    "categoryId": 7,
-    "unit": "əd",
-    "boxArea": null,
-    "dimensions": null,
-    "price": null,
-    "inStock": true,
-    "image": "/images/chemistry.png",
-    "description": "",
-    "specs": [
-      {
-        "label": "Ölçü vahidi",
-        "value": "əd"
-      }
-    ]
-  },
-  {
-    "id": 8104,
+    "id": 104,
     "name": "Darağ",
     "categoryId": 8,
     "unit": "əd",
@@ -2676,7 +2586,61 @@ export const products = [
     ]
   },
   {
-    "id": 8105,
+    "id": 104,
+    "name": "Home Maxi Glossy 5lt",
+    "categoryId": 7,
+    "unit": "əd",
+    "boxArea": null,
+    "dimensions": null,
+    "price": null,
+    "inStock": true,
+    "image": "/images/chemistry.png",
+    "description": "",
+    "specs": [
+      {
+        "label": "Ölçü vahidi",
+        "value": "əd"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Home Maxi Semi Glossy 5lt",
+    "categoryId": 7,
+    "unit": "əd",
+    "boxArea": null,
+    "dimensions": null,
+    "price": null,
+    "inStock": true,
+    "image": "/images/chemistry.png",
+    "description": "",
+    "specs": [
+      {
+        "label": "Ölçü vahidi",
+        "value": "əd"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "İdrofondo H20 5lt",
+    "categoryId": 7,
+    "unit": "əd",
+    "boxArea": null,
+    "dimensions": null,
+    "price": null,
+    "inStock": true,
+    "image": "/images/chemistry.png",
+    "description": "",
+    "specs": [
+      {
+        "label": "Ölçü vahidi",
+        "value": "əd"
+      }
+    ]
+  },
+  {
+    "id": 104,
     "name": "LEGA STUCCO RS/A 5lt",
     "categoryId": 8,
     "unit": "əd",
@@ -2694,7 +2658,43 @@ export const products = [
     ]
   },
   {
-    "id": 8106,
+    "id": 104,
+    "name": "MAXI OIL GLOSSY 2,5lt",
+    "categoryId": 7,
+    "unit": "əd",
+    "boxArea": null,
+    "dimensions": null,
+    "price": null,
+    "inStock": true,
+    "image": "/images/chemistry.png",
+    "description": "",
+    "specs": [
+      {
+        "label": "Ölçü vahidi",
+        "value": "əd"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name": "MAXI OIL SEMI GLOSSY 2,5lt",
+    "categoryId": 7,
+    "unit": "əd",
+    "boxArea": null,
+    "dimensions": null,
+    "price": null,
+    "inStock": true,
+    "image": "/images/chemistry.png",
+    "description": "",
+    "specs": [
+      {
+        "label": "Ölçü vahidi",
+        "value": "əd"
+      }
+    ]
+  },
+  {
+    "id": 104,
     "name": "Tover PULİTO PARQUET 1lt",
     "categoryId": 8,
     "unit": "əd",
@@ -2712,7 +2712,7 @@ export const products = [
     ]
   },
   {
-    "id": 8107,
+    "id": 104,
     "name": "Tover DETEROIL 1lt",
     "categoryId": 8,
     "unit": "əd",
@@ -2730,7 +2730,7 @@ export const products = [
     ]
   },
   {
-    "id": 8108,
+    "id": 104,
     "name": "Tover LUX 1lt",
     "categoryId": 8,
     "unit": "əd",
@@ -2748,7 +2748,7 @@ export const products = [
     ]
   },
   {
-    "id": 8109,
+    "id": 104,
     "name": "Tover Stripcoll 1lt",
     "categoryId": 8,
     "unit": "əd",
@@ -2766,7 +2766,7 @@ export const products = [
     ]
   },
   {
-    "id": 8110,
+    "id": 104,
     "name": "Tover TOVCLEAN 310ml",
     "categoryId": 8,
     "unit": "əd",
@@ -2784,7 +2784,7 @@ export const products = [
     ]
   },
   {
-    "id": 8111,
+    "id": 104,
     "name": "Tover FullGap White 310ml",
     "categoryId": 8,
     "unit": "əd",
@@ -2802,7 +2802,7 @@ export const products = [
     ]
   },
   {
-    "id": 8112,
+    "id": 104,
     "name": "Tover FullGap Venge 310ml",
     "categoryId": 8,
     "unit": "əd",
@@ -2820,7 +2820,7 @@ export const products = [
     ]
   },
   {
-    "id": 8113,
+    "id": 104,
     "name": "Tover FullGap OAP 310ml",
     "categoryId": 8,
     "unit": "əd",
@@ -2838,8 +2838,8 @@ export const products = [
     ]
   },
   {
-    "id": 8114,
-    "name": "Tover FullGap Teak 310ml",
+    "id": 104,
+    "name": "Tover FullGap Teak 310 ml",
     "categoryId": 8,
     "unit": "əd",
     "boxArea": null,

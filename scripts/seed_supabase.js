@@ -1,13 +1,20 @@
 import { createClient } from '@supabase/supabase-js';
 import { products } from '../src/data/products.js';
 import * as dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+import fs from 'fs';
+
+if (fs.existsSync('.env.local')) {
+  dotenv.config({ path: '.env.local' });
+} else {
+  dotenv.config();
+}
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('Missing Supabase credentials in .env');
+  console.error('Missing Supabase credentials (VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY)');
+  console.log('Ensure they are set in .env.local or as environment variables.');
   process.exit(1);
 }
 
