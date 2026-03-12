@@ -83,13 +83,29 @@ const ProductDetail = () => {
             <h1 className="text-5xl md:text-6xl font-display text-white mb-4 leading-tight">
               {product.name}
             </h1>
-            <p className="text-white/60 text-sm uppercase tracking-[0.3em] font-bold mb-12 border-b border-white/10 pb-6 inline-block">
-              Rəng: {product.color}
-            </p>
+            
+            <div className="flex flex-col gap-2 mb-8 border-b border-white/10 pb-6">
+              {product.color && (
+                <p className="text-white/60 text-sm uppercase tracking-[0.3em] font-bold">
+                  Rəng: {product.color}
+                </p>
+              )}
+              {product.price ? (
+                <p className="text-accent-gold text-2xl font-display">
+                  {product.price.toFixed(2)} AZN
+                </p>
+              ) : (
+                <p className="text-accent-gold text-sm uppercase tracking-widest font-bold mt-2">
+                  Qiymət üçün əlaqə
+                </p>
+              )}
+            </div>
 
-            <p className="text-white/60 text-lg leading-relaxed mb-12">
-              {product.description}
-            </p>
+            {product.description && (
+              <p className="text-white/60 text-lg leading-relaxed mb-12">
+                {product.description}
+              </p>
+            )}
 
             <div className="grid grid-cols-2 md:grid-cols-2 gap-y-10 gap-x-6 mb-16">
               {product.specs.map((spec, index) => {

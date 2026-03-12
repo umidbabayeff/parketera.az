@@ -42,7 +42,11 @@ const ProductCard = ({ product, index = 0 }) => {
           <p className="text-white/40 text-[11px] font-bold uppercase tracking-[0.2em] mb-4">{product.color}</p>
         </Link>
         <div className="mt-auto flex justify-between items-center pt-4 border-t border-white/10">
-          <span className="text-white font-display text-lg">{product.price.toFixed(2)} AZN</span>
+          {product.price ? (
+            <span className="text-white font-display text-lg">{product.price.toFixed(2)} AZN</span>
+          ) : (
+            <span className="text-accent-gold text-[10px] uppercase tracking-widest font-bold">Qiymət üçün əlaqə</span>
+          )}
         </div>
       </div>
     </motion.div>
