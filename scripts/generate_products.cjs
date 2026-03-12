@@ -81,9 +81,12 @@ async function run() {
         else if (name.includes('Chevron')) catId = 1; // Or add separate cat
       } else if (type.includes('Yapışdırıcı')) catId = 6;
       else if (type.includes('Lak') || type.includes('Qruntovka')) catId = 7;
+
+      // Use row index + 1 as the source of truth for ID to avoid duplicates if "No" column is same
+      const productId = i + 1;
       
       products.push({
-        id: parseInt(no) || (catId * 1000 + i + 1),
+        id: productId,
         name,
         categoryId: catId,
         unit,
