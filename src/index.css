@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0a0a0b;
+  --color-bg-darker: #050505;
+  --color-accent-gold: #c5a059;
+  --color-accent-gold-light: #e0c08d;
+  
+  --font-main: "Inter", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+}
+
+/* Custom Base Styles */
+@layer base {
+  * {
+    @apply m-0 p-0 box-border scroll-smooth;
+  }
+
+  body {
+    @apply font-main bg-bg-dark text-white overflow-x-hidden antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+/* Luxury Utilities */
+@layer components {
+  .luxury-gradient {
+    background: linear-gradient(135deg, #e5b85a 0%, #fdf0d5 50%, #e5b85a 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
+  }
+
+  .btn-primary {
+    @apply bg-accent-gold text-black px-8 py-4 font-bold tracking-[0.1em] transition-all duration-500 border border-accent-gold cursor-pointer;
+  }
+
+  .btn-primary:hover {
+    @apply bg-transparent text-accent-gold -translate-y-0.5 shadow-[0_10px_30px_rgba(197,160,89,0.2)];
+  }
+
+  .text-shadow-premium {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
+  }
+
+  .logo-golden {
+    background-color: var(--color-accent-gold);
+    mask-image: url('/images/logo.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: left center;
+    -webkit-mask-image: url('/images/logo.png');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}

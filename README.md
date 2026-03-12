@@ -1,110 +1,16 @@
-# Parketera - Online Flooring Store
+# React + Vite
 
-Product catalog system for Parketera flooring store built with React, TypeScript, Tailwind CSS, and Supabase.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- 📦 Product catalog with 11+ flooring products
-- 🔍 Search functionality by product name
-- 🏷️ Category filtering (Parket, Yapışdırıcı, Lak, Təmizləyici vasitə)
-- 📱 Responsive grid layout (mobile, tablet, desktop)
-- 🎨 Modern UI with Tailwind CSS
-- 🔐 Supabase backend with Row Level Security
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Setup
+## React Compiler
 
-### 1. Install Dependencies
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-```bash
-npm install @supabase/supabase-js
-```
+## Expanding the ESLint configuration
 
-### 2. Configure Supabase
-
-1. Create a new Supabase project at [supabase.com](https://supabase.com)
-2. Copy `.env.local.example` to `.env.local`
-3. Fill in your Supabase credentials:
-   - `NEXT_PUBLIC_SUPABASE_URL`: Your project URL
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your anonymous key
-
-### 3. Run Database Migrations
-
-In your Supabase SQL Editor, run the migrations in order:
-
-1. `supabase/migrations/001_create_products_table.sql` - Creates the products table
-2. `supabase/migrations/002_seed_products.sql` - Seeds the database with product data
-
-### 4. Use the Component
-
-```tsx
-import ProductCatalog from '@/components/ProductCatalog';
-
-export default function Page() {
-  return <ProductCatalog />;
-}
-```
-
-## Project Structure
-
-```
-parketera.az/
-├── components/
-│   └── ProductCatalog.tsx      # Main product catalog component
-├── lib/
-│   └── supabase.ts             # Supabase client configuration
-├── types/
-│   └── product.ts              # TypeScript type definitions
-├── supabase/
-│   └── migrations/
-│       ├── 001_create_products_table.sql
-│       └── 002_seed_products.sql
-└── .env.local.example          # Environment variables template
-```
-
-## Database Schema
-
-### Products Table
-
-| Column            | Type      | Description                    |
-|-------------------|-----------|--------------------------------|
-| id                | UUID      | Primary key                    |
-| legacy_id         | INTEGER   | Original ID from source data   |
-| category          | TEXT      | Product category               |
-| name              | TEXT      | Product name                   |
-| unit              | TEXT      | Measurement unit               |
-| coverage_per_box  | NUMERIC   | Coverage per box in m²         |
-| price             | NUMERIC   | Price in AZN                   |
-| dimensions        | TEXT      | Product dimensions             |
-| created_at        | TIMESTAMP | Creation timestamp             |
-| updated_at        | TIMESTAMP | Last update timestamp          |
-
-## TypeScript Types
-
-```typescript
-interface Product {
-  id: string;
-  legacy_id: number;
-  category: string;
-  name: string;
-  unit: string;
-  coverage_per_box: number;
-  price: number;
-  dimensions: string;
-  created_at: string;
-  updated_at: string;
-}
-
-type ProductCategory = 'Parket' | 'Yapışdırıcı' | 'Lak' | 'Təmizləyici vasitə';
-```
-
-## Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the application.
-
-## License
-
-MIT
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
