@@ -61,14 +61,16 @@ const CustomSelect = ({ label, value, options, onChange }) => {
 
 const CalculatorModal = ({ isOpen, onClose }) => {
   const [area, setArea] = useState('');
-  const [parquetType, setParquetType] = useState('engineered');
+  const [parquetType, setParquetType] = useState('bambuk');
   const [glueType, setGlueType] = useState('standard');
   const [includesInstallation, setIncludesInstallation] = useState(false);
 
   const parquetOptions = [
-    { value: 'engineered', label: 'Mühəndis Lövhəsi' },
-    { value: 'massive', label: 'Massiv Parket' },
-    { value: 'modular', label: 'Modul Parket' },
+    { value: 'bambuk', label: 'Bambuk (~70 AZN/m²)' },
+    { value: 'armosiya', label: 'Armoziya (~120 AZN/m²)' },
+    { value: 'merbau', label: 'Merbau (~150 AZN/m²)' },
+    { value: 'engineered', label: 'Mühəndis Lövhəsi (~85 AZN/m²)' },
+    { value: 'laminat', label: 'Laminat (~25 AZN/m²)' },
   ];
 
   const glueOptions = [
@@ -78,9 +80,11 @@ const CalculatorModal = ({ isOpen, onClose }) => {
   ];
 
   const prices = {
+    bambuk: 70,
+    armosiya: 120,
+    merbau: 150,
     engineered: 85,
-    massive: 130,
-    modular: 200,
+    laminat: 25,
   };
 
   const gluePrices = {

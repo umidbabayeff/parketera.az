@@ -1,18 +1,36 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { products, categories } from '../data/products';
+import { categories } from '../data/products';
+import { supabase } from '../lib/supabase';
 
 const CategoryDetail = () => {
   const { id } = useParams();
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   const category = useMemo(() => categories.find(c => c.id === parseInt(id)), [id]);
-  const categoryProducts = useMemo(() => products.filter(p => p.categoryId === parseInt(id)), [id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchCategoryProducts();
   }, [id]);
+
+  const fetchCategoryProducts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from('products').select('*').eq('categoryId', parseInt(id));
+    if (data) {
+      setProducts(data.map(p => ({
+        ...p,
+        categoryId: p.category_id,
+        color: p.color || '',
+        image: p.image_url || p.image,
+        inStock: p.in_stock || p.inStock
+      })));
+    }
+    setLoading(false);
+  };
 
   if (!category) {
     return (
@@ -71,36 +89,42 @@ const CategoryDetail = () => {
             <h2 className="text-3xl font-display text-white">Bütün Modellər</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categoryProducts.map((product, idx) => (
-              <motion.div 
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative h-[480px] overflow-hidden bg-neutral-900 border border-white/5 mb-6 rounded-[2px]">
-                  <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-70 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <Link 
-                    to={`/mehsul/${product.id}`}
-                    className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 text-center block"
-                  >
-                    <span className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] hover:bg-accent-gold hover:text-black transition-colors block">
-                      Ətraflı Bax
-                    </span>
+          {loading ? (
+             <div className="text-white/50 py-10">Məhsullar yüklənir...</div>
+          ) : products.length === 0 ? (
+             <div className="text-white/50 py-10">Bu kateqoriyada məhsul yoxdur.</div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+              {products.map((product, idx) => (
+                <motion.div 
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group cursor-pointer flex flex-col h-full"
+                >
+                  <div className="relative h-[240px] md:h-[400px] lg:h-[480px] overflow-hidden bg-neutral-900 border border-white/5 mb-4 md:mb-6 rounded-[2px]">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-80" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    
+                    <Link 
+                      to={`/mehsul/${product.id}`}
+                      className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 text-center block"
+                    >
+                      <span className="w-full py-2 md:py-4 bg-white text-black font-bold uppercase tracking-widest text-[8px] md:text-[10px] hover:bg-accent-gold hover:text-black transition-colors block">
+                        Ətraflı Bax
+                      </span>
+                    </Link>
+                  </div>
+                  <Link to={`/mehsul/${product.id}`} className="block mt-auto">
+                    <h3 className="text-sm md:text-xl font-display text-white mb-1 md:mb-2 group-hover:text-accent-gold transition-colors">{product.name}</h3>
+                    <p className="text-white/40 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em]">{product.color}</p>
                   </Link>
-                </div>
-                <Link to={`/mehsul/${product.id}`} className="block mt-4">
-                  <h3 className="text-xl font-display text-white mb-2 group-hover:text-accent-gold transition-colors">{product.name}</h3>
-                  <p className="text-white/40 text-[11px] font-bold uppercase tracking-[0.2em]">{product.color}</p>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </motion.div>
       </div>
     </div>

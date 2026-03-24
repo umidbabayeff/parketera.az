@@ -26,7 +26,11 @@ async function seedProducts() {
   // Create table if it doesn't exist (using SQL editor or migrations normally, 
   // but we'll try to insert and it will fail if table is missing)
   
-  const formattedProducts = products.map(p => ({
+  const uniqueProductsMap = new Map();
+  products.forEach(p => uniqueProductsMap.set(p.id, p));
+  const uniqueProducts = Array.from(uniqueProductsMap.values());
+
+  const formattedProducts = uniqueProducts.map(p => ({
     id: p.id,
     name: p.name,
     categoryId: p.categoryId,

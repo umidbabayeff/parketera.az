@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Ruler, Shield, Layers, Calendar, Weight, Droplets, Zap } from 'lucide-react';
-import { products } from '../data/products';
+import { supabase } from '../lib/supabase';
 
 // Helper to map label names to icons
 const getIcon = (label) => {
@@ -24,12 +24,37 @@ const getIcon = (label) => {
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
-  const product = products.find(p => p.id === parseInt(id));
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchProduct();
   }, [id]);
+
+  const fetchProduct = async () => {
+    setLoading(true);
+    const { data } = await supabase.from('products').select('*').eq('id', id).single();
+    if (data) {
+      setProduct({
+        ...data,
+        categoryId: data.category_id,
+        color: data.color || '',
+        image: data.image_url || data.image,
+        inStock: data.in_stock || data.inStock,
+        specs: data.specs || []
+      });
+    }
+    setLoading(false);
+  };
+
+  if (loading) {
+     return (
+       <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+         <div className="text-white/50">Məhsul yüklənir...</div>
+       </div>
+     );
+  }
 
   if (!product) {
     return (

@@ -2,51 +2,39 @@
 export const categories = [
   {
     "id": 1,
-    "name": "Bambuk Parket",
+    "name": "Bambuk",
     "description": "Ekoloji və davamlı bambuk parketi. Müxtəlif rəng və naxış seçimləri ilə məkanınıza təbiət gözəlliyi qatır.",
     "image": "/images/engineered.png"
   },
   {
     "id": 2,
-    "name": "Herringbone Parket",
-    "description": "Klassik yolka naxışlı parket. Zərif və əlvan dizaynı ilə məkanınıza lüks görünüş verir.",
-    "image": "/images/engineered.png"
+    "name": "Armoziya",
+    "description": "Zərif və lüks görünüşlü Armoziya parketi.",
+    "image": "/images/massive.png"
   },
   {
     "id": 3,
-    "name": "Merbau / Armosia / Teak",
-    "description": "Ekzotik tropik ağac növlərindən hazırlanmış premium parketlər. Yüksək davamlılıq və unikal təbii naxışlar.",
+    "name": "Merbau",
+    "description": "Ekzotik ağac növlərindən hazırlanmış premium Merbau parket. Yüksək davamlılıq.",
     "image": "/images/massive.png"
   },
   {
     "id": 4,
-    "name": "EK Herringbone",
-    "description": "Kiçik formatlı ekzotik yolka parket. İncə detal işləməsi ilə klassik interyerlər üçün ideal seçim.",
+    "name": "Mühəndis Lövhəsi",
+    "description": "Avropa keyfiyyətli mühəndis lövhələri. Müxtəlif ölçü və rəng variantları.",
     "image": "/images/engineered.png"
-  },
-  {
-    "id": 5,
-    "name": "BalticWood",
-    "description": "Avropa keyfiyyətli BalticWood mühəndis lövhələri. Müxtəlif ölçü və rəng variantları ilə premium döşəmə həlli.",
-    "image": "/images/engineered.png"
-  },
-  {
-    "id": 6,
-    "name": "Yapışdırıcı",
-    "description": "Parketinizin uzunömürlü olmasını təmin edən peşəkar yapışdırıcılar.",
-    "image": "/images/chemistry.png"
-  },
-  {
-    "id": 7,
-    "name": "Lak və Qruntovka",
-    "description": "Parket səthini qoruyan və gözəlləşdirən lak, qruntovka və yağ məhsulları.",
-    "image": "/images/chemistry.png"
   },
   {
     "id": 8,
     "name": "Parket Kimyası",
-    "description": "Təmizləyici vasitələr, aradolducular və digər parket qulluq məhsulları.",
+    "description": "Təmizləyici vasitələr, yapışdırıcılar və digər parket qulluq məhsulları.",
     "image": "/images/chemistry.png"
+  },
+  {
+    "id": 6,
+    "name": "Laminat",
+    "description": "Yüksək keyfiyyətli və suya davamlı laminat döşəmələr.",
+    "image": "/images/engineered.png"
   }
 ];
 

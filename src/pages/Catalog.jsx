@@ -1,13 +1,34 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, X } from 'lucide-react';
-import { products, categories } from '../data/products';
+import { Search } from 'lucide-react';
+import { categories } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import { supabase } from '../lib/supabase';
 
 const Catalog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    const { data, error } = await supabase.from('products').select('*').order('id', { ascending: false });
+    if (data) {
+      setProducts(data.map(p => ({
+        ...p,
+        categoryId: p.category_id || p.categoryId,
+        color: p.color || '',
+        image: p.image_url || p.image,
+        inStock: p.in_stock || p.inStock
+      })));
+    }
+    setLoading(false);
+  };
 
   // Filter products based on search term and selected categories
   const filteredProducts = useMemo(() => {
@@ -17,7 +38,7 @@ const Catalog = () => {
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.categoryId);
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategories]);
+  }, [products, searchTerm, selectedCategories]);
 
   const toggleCategory = (categoryId) => {
     setSelectedCategories(prev => 
@@ -46,32 +67,11 @@ const Catalog = () => {
           </h1>
         </motion.div>
 
-        {/* Mobile Filter Toggle Button */}
-        <div className="lg:hidden mb-8 flex justify-end">
-          <button 
-            onClick={() => setIsMobileFiltersOpen(true)}
-            className="flex items-center gap-2 text-white border border-white/20 px-4 py-2 hover:border-accent-gold hover:text-accent-gold transition-colors text-xs font-bold uppercase tracking-widest"
-          >
-            <Filter size={16} /> Filterlər
-          </button>
-        </div>
-
         <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
           
-          {/* Sidebar / Filters */}
-          <div className={`
-            fixed inset-0 z-50 bg-bg-dark/95 backdrop-blur-xl p-8 transform transition-transform duration-300 lg:relative lg:p-0 lg:bg-transparent lg:backdrop-blur-none lg:z-auto lg:w-1/4 lg:transform-none lg:translate-x-0 lg:block
-            ${isMobileFiltersOpen ? 'translate-x-0' : '-translate-x-full'}
-          `}>
-            
-            <div className="flex justify-between items-center mb-10 lg:hidden">
-              <h3 className="text-white font-display text-2xl">Filterlər</h3>
-              <button onClick={() => setIsMobileFiltersOpen(false)} className="text-white/60 hover:text-white">
-                <X size={24} />
-              </button>
-            </div>
-
-            <div className="sticky top-32 space-y-12">
+          {/* Sidebar / Filters (Inline on Mobile) */}
+          <div className="w-full lg:w-1/4 lg:sticky lg:top-32 h-fit mb-4 mt-8 lg:mt-0">
+            <div className="space-y-10">
               {/* Search */}
               <div>
                 <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Axtarış</h4>
@@ -81,7 +81,7 @@ const Catalog = () => {
                     placeholder="Məhsul adı və ya rəng..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full bg-neutral-900 border border-white/10 text-white px-4 py-3 pl-10 focus:outline-none focus:border-accent-gold transition-colors"
+                    className="w-full bg-neutral-900 border border-white/10 rounded-[2px] text-white px-4 py-3 pl-10 focus:outline-none focus:border-accent-gold transition-colors"
                   />
                   <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
                 </div>
@@ -118,7 +118,11 @@ const Catalog = () => {
 
           {/* Product Grid */}
           <div className="flex-1">
-            {filteredProducts.length === 0 ? (
+            {loading ? (
+              <div className="h-64 flex items-center justify-center border border-white/5 bg-neutral-900/50">
+                 <p className="text-white/40 text-sm">Yüklənir...</p>
+              </div>
+            ) : filteredProducts.length === 0 ? (
               <div className="h-64 flex flex-col items-center justify-center border border-white/5 bg-neutral-900/50">
                 <h3 className="text-white text-xl font-display mb-2">Məhsul Tapılmadı</h3>
                 <p className="text-white/40 text-sm">Axtarış meyarlarınıza uyğun məhsul yoxdur.</p>
@@ -131,7 +135,7 @@ const Catalog = () => {
                 <div className="mb-6 text-white/40 text-sm">
                   Cəmi <span className="text-white font-bold">{filteredProducts.length}</span> məhsul tapıldı
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10">
+                <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-10">
                   {filteredProducts.map((product, index) => (
                     <ProductCard key={product.id} product={product} index={index} />
                   ))}
