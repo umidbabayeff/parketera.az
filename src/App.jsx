@@ -38,9 +38,9 @@ const MainLayout = () => {
             <div>
               <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-8">Sosial Media</h4>
               <ul className="space-y-4 text-sm text-white/40">
-                <li><a href="#" className="hover:text-accent-gold transition-colors">Instagram</a></li>
+                <li><a href="https://instagram.com/parketera.az" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors">Instagram</a></li>
                 <li><a href="https://wa.me/994702772240" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors">WhatsApp</a></li>
-                <li><a href="#" className="hover:text-accent-gold transition-colors">Facebook</a></li>
+                <li><a href="https://facebook.com/parketera.az" target="_blank" rel="noopener noreferrer" className="hover:text-accent-gold transition-colors">Facebook</a></li>
               </ul>
             </div>
           </div>
