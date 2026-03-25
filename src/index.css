@@ -68,9 +68,23 @@
       -webkit-mask-position: center !important;
     }
   }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(197, 160, 89, 0.2);
+    border-radius: 10px;
+  }
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: rgba(197, 160, 89, 0.5);
+  }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar Global */
 ::-webkit-scrollbar {
   width: 5px;
 }

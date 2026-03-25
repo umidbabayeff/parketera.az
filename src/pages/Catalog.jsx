@@ -8,6 +8,8 @@ import { supabase } from '../lib/supabase';
 const Catalog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  const [selectedSubType, setSelectedSubType] = useState(null);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,10 +23,10 @@ const Catalog = () => {
     if (data) {
       setProducts(data.map(p => ({
         ...p,
-        categoryId: p.category_id || p.categoryId,
+        categoryId: p.categoryId || p.category_id,
         color: p.color || '',
-        image: p.image_url || p.image,
-        inStock: p.in_stock || p.inStock
+        image: p.image || p.image_url,
+        inStock: p.inStock || p.in_stock
       })));
     }
     setLoading(false);
@@ -33,8 +35,8 @@ const Catalog = () => {
   // Filter products based on search term and selected categories
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            product.color.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = (product.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) || 
+                            (product.color?.toLowerCase() || '').includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.categoryId);
       return matchesSearch && matchesCategory;
     });
@@ -46,12 +48,32 @@ const Catalog = () => {
         ? prev.filter(c => c !== categoryId)
         : [...prev, categoryId]
     );
+    // Reset subcategories if deselecting Bambuk
+    if (categoryId === 1 && selectedCategories.includes(1)) {
+      setSelectedSubCategory(null);
+      setSelectedSubType(null);
+    }
   };
 
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedCategories([]);
+    setSelectedSubCategory(null);
+    setSelectedSubType(null);
   };
+
+  const bambukSubCategories = {
+    'Dekorativ': ['Herringbone', 'Düz'],
+    'Sadə': ['Parlaq', 'Mat'],
+    'Massiv': ['Herringbone', 'Chevron', 'Düz']
+  };
+
+  const muhendisSubCategories = [
+    'Maxi plank', 
+    '1R', 
+    '3R', 
+    'Herringbone'
+  ];
 
   return (
     <div className="pt-32 pb-20 bg-bg-dark min-h-screen">
@@ -70,8 +92,8 @@ const Catalog = () => {
         <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
           
           {/* Sidebar / Filters (Inline on Mobile) */}
-          <div className="w-full lg:w-1/4 lg:sticky lg:top-32 h-fit mb-4 mt-8 lg:mt-0">
-            <div className="space-y-10">
+          <div className="w-full lg:w-1/4 lg:sticky lg:top-32 h-fit mb-4 mt-8 lg:mt-0 lg:max-h-[calc(100vh-160px)] lg:overflow-y-auto lg:pr-6 custom-scrollbar">
+            <div className="space-y-10 pr-2 pb-10">
               {/* Search */}
               <div>
                 <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Axtarış</h4>
@@ -90,27 +112,90 @@ const Catalog = () => {
               {/* Categories */}
               <div>
                 <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Kateqoriyalar</h4>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {categories.map((cat) => (
-                    <label key={cat.id} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleCategory(cat.id); }}>
-                      <div className={`w-4 h-4 border flex items-center justify-center transition-colors ${selectedCategories.includes(cat.id) ? 'border-accent-gold bg-accent-gold' : 'border-white/20 group-hover:border-white/50'}`}>
-                        {selectedCategories.includes(cat.id) && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-2 h-2 bg-black" />}
-                      </div>
-                      <span className={`text-sm transition-colors ${selectedCategories.includes(cat.id) ? 'text-white font-medium' : 'text-white/60 group-hover:text-white'}`}>
-                        {cat.name}
-                      </span>
-                    </label>
+                    <div key={cat.id} className="space-y-3">
+                      <label className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleCategory(cat.id); }}>
+                        <div className={`w-4 h-4 border flex items-center justify-center transition-colors ${selectedCategories.includes(cat.id) ? 'border-accent-gold bg-accent-gold' : 'border-white/20 group-hover:border-white/50'}`}>
+                          {selectedCategories.includes(cat.id) && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-2.5 h-2.5 bg-black" />}
+                        </div>
+                        <span className={`text-sm tracking-wide transition-colors ${selectedCategories.includes(cat.id) ? 'text-white font-medium' : 'text-white/60 group-hover:text-white'}`}>
+                          {cat.name}
+                        </span>
+                      </label>
+
+                      {/* Nested Subcategories for Bambuk (ID 1) */}
+                      {cat.id === 1 && selectedCategories.includes(1) && (
+                        <motion.div 
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="pl-7 space-y-4 pt-1 border-l border-white/5 ml-2"
+                        >
+                          {Object.keys(bambukSubCategories).map((subCat) => (
+                            <div key={subCat} className="space-y-3">
+                              <label className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); setSelectedSubCategory(selectedSubCategory === subCat ? null : subCat); }}>
+                                <div className={`w-3.5 h-3.5 border flex items-center justify-center transition-colors ${selectedSubCategory === subCat ? 'border-accent-gold bg-accent-gold/40' : 'border-white/10 group-hover:border-white/30'}`}>
+                                  {selectedSubCategory === subCat && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-1.5 h-1.5 bg-accent-gold" />}
+                                </div>
+                                <span className={`text-[12px] transition-colors ${selectedSubCategory === subCat ? 'text-accent-gold' : 'text-white/50 group-hover:text-white/70'}`}>
+                                  {subCat}
+                                </span>
+                              </label>
+
+                              {/* Nested SubTypes */}
+                              {selectedSubCategory === subCat && (
+                                <motion.div 
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  className="pl-6 space-y-2 pb-2"
+                                >
+                                  {bambukSubCategories[subCat].map((type) => (
+                                    <label key={type} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); setSelectedSubType(selectedSubType === type ? null : type); }}>
+                                      <div className={`w-1.5 h-1.5 rounded-full border transition-colors ${selectedSubType === type ? 'bg-accent-gold border-accent-gold' : 'border-white/20 group-hover:border-white/40'}`} />
+                                      <span className={`text-[10px] uppercase tracking-widest transition-colors ${selectedSubType === type ? 'text-white' : 'text-white/30 group-hover:text-white/50'}`}>
+                                        {type}
+                                      </span>
+                                    </label>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </div>
+                          ))}
+                        </motion.div>
+                      )}
+
+                      {/* Nested Subcategories for Mühəndis Lövhəsi (ID 4) */}
+                      {cat.id === 4 && selectedCategories.includes(4) && (
+                        <motion.div 
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="pl-7 space-y-3 pt-1 border-l border-white/5 ml-2"
+                        >
+                          {muhendisSubCategories.map((subCat) => (
+                            <label key={subCat} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); setSelectedSubCategory(selectedSubCategory === subCat ? null : subCat); }}>
+                              <div className={`w-3.5 h-3.5 border flex items-center justify-center transition-colors ${selectedSubCategory === subCat ? 'border-accent-gold bg-accent-gold/40' : 'border-white/10 group-hover:border-white/30'}`}>
+                                {selectedSubCategory === subCat && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-1.5 h-1.5 bg-accent-gold" />}
+                              </div>
+                              <span className={`text-[12px] transition-colors ${selectedSubCategory === subCat ? 'text-accent-gold' : 'text-white/50 group-hover:text-white/70'}`}>
+                                {subCat}
+                              </span>
+                            </label>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
 
+
               {/* Active Filters Clear */}
-              {(searchTerm || selectedCategories.length > 0) && (
+              {(searchTerm || selectedCategories.length > 0 || selectedSubCategory || selectedSubType) && (
                 <button 
                   onClick={clearFilters}
-                  className="text-accent-gold text-xs uppercase tracking-widest hover:underline"
+                  className="text-accent-gold text-[10px] uppercase tracking-widest hover:underline pt-4 block"
                 >
-                  Filterləri Təmizlə ({selectedCategories.length + (searchTerm ? 1 : 0)})
+                  Filterləri Təmizlə ({selectedCategories.length + (searchTerm ? 1 : 0) + (selectedSubCategory ? 1 : 0) + (selectedSubType ? 1 : 0)})
                 </button>
               )}
             </div>
