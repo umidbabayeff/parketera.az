@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Calculator } from 'lucide-react';
 import CalculatorModal from './CalculatorModal';
 
 const Hero = () => {
@@ -103,7 +103,7 @@ const Hero = () => {
                 className="flex items-center gap-4 group"
               >
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-accent-gold transition-colors">
-                  <div className="w-2 h-2 bg-accent-gold rounded-full" />
+                  <Calculator size={18} className="text-accent-gold" />
                 </div>
                 <span className="uppercase tracking-[0.2em] text-[11px] font-bold text-white group-hover:text-accent-gold transition-colors text-shadow-premium">Kalkulyator</span>
               </button>
