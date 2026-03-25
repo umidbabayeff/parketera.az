@@ -8,10 +8,13 @@ const Hero = () => {
   const canvasRef = React.useRef(null);
   const totalFrames = 72;
   const frames = React.useRef([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   // Preload frames
   React.useEffect(() => {
     let loadedCount = 0;
+    const preloadFrames = [];
+
     for (let i = 1; i <= totalFrames; i++) {
       const img = new Image();
       const actualFrame = ((i - 1) * 4) + 1;
@@ -19,41 +22,53 @@ const Hero = () => {
       img.src = `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
       img.onload = () => {
         loadedCount++;
+        if (loadedCount === totalFrames) {
+          setIsLoaded(true);
+        }
       };
-      frames.current.push(img);
+      preloadFrames.push(img);
     }
+    frames.current = preloadFrames;
 
     let frameIndex = 0;
-    const render = () => {
-      const canvas = canvasRef.current;
-      if (canvas && frames.current[frameIndex]) {
-        const ctx = canvas.getContext('2d');
+    let lastTime = 0;
+    const fps = 12;
+    const interval = 1000 / fps;
+
+    const render = (time) => {
+      // Control FPS with requestAnimationFrame
+      if (time - lastTime >= interval) {
+        const canvas = canvasRef.current;
         const img = frames.current[frameIndex];
         
-        // Match canvas size to display size
-        if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
-          canvas.width = canvas.clientWidth;
-          canvas.height = canvas.clientHeight;
-        }
+        if (canvas && img && img.complete && img.naturalWidth !== 0) {
+          const ctx = canvas.getContext('2d');
+          
+          if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+          }
 
-        // Draw with cover fit
-        const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
-        const x = (canvas.width / 2) - (img.width / 2) * scale;
-        const y = (canvas.height / 2) - (img.height / 2) * scale;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+          const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+          const x = (canvas.width / 2) - (img.width / 2) * scale;
+          const y = (canvas.height / 2) - (img.height / 2) * scale;
+          ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+          
+          frameIndex = (frameIndex + 1) % totalFrames;
+        }
+        lastTime = time;
       }
-      frameIndex = (frameIndex + 1) % totalFrames;
+      requestAnimationFrame(render);
     };
 
-    const timer = setInterval(render, 80); // ~12 FPS
-    return () => clearInterval(timer);
+    const animationId = requestAnimationFrame(render);
+    return () => cancelAnimationFrame(animationId);
   }, []);
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       {/* Canvas Background Sequence */}
-      <div className="absolute inset-0 z-0 opacity-60">
+      <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isLoaded ? 'opacity-60' : 'opacity-0'}`}>
         <canvas
           ref={canvasRef}
           className="w-full h-full object-cover"
