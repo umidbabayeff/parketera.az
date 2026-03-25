@@ -41,7 +41,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a href="tel:+994501234567" className="btn-primary flex items-center gap-3 px-8 py-4 rounded-none uppercase tracking-[0.2em] text-[12px]">
+          <a href="tel:+994702772277" className="btn-primary flex items-center gap-3 px-8 py-4 rounded-none uppercase tracking-[0.2em] text-[12px]">
             <Phone size={14} strokeWidth={2.5} />
             <span>Zəng edin</span>
           </a>
