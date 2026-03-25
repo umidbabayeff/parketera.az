@@ -41,7 +41,7 @@ const Contact = () => {
                   <h4 className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Telefon</h4>
                   <div className="flex flex-col gap-2">
                     <p className="text-xl font-light">+994 70 277 22 77</p>
-                    <p className="text-xl font-light">+994 12 277 22 40</p>
+                    <p className="text-xl font-light">+994 70 277 22 40</p>
                   </div>
                 </div>
               </div>
