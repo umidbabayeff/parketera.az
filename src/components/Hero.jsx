@@ -33,7 +33,7 @@ const Hero = () => {
             </span>
             <h1 className="text-5xl md:text-[5rem] font-display leading-[1.1] text-white mb-12 tracking-tight text-shadow-premium">
               Hər Addımda <br /> 
-              <span className="italic pl-4 md:pl-10 luxury-gradient">Keyfiyyəti Hiss Edin</span>
+              <span className="italic pl-4 md:pl-10 text-white">Keyfiyyəti Hiss Edin</span>
             </h1>
             <div className="flex flex-wrap gap-8 items-center">
               <button className="btn-primary flex items-center gap-4 px-10 py-5 group bg-accent-gold border-none rounded-none">
