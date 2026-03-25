@@ -24,10 +24,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled ? 'py-2 bg-black/90 backdrop-blur-2xl border-b border-white/5' : 'py-5 bg-black/40 backdrop-blur-sm'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 ${isScrolled ? 'py-2 bg-black/90 backdrop-blur-2xl border-b border-white/5' : 'py-5 bg-black/40 backdrop-blur-sm'}`}>
       <div className="max-w-[1600px] px-8 md:px-12 mx-auto flex justify-between items-center">
         <Link to="/" className="group flex items-center h-[50px] md:h-[60px]">
-          <div className="logo-golden w-[220px] md:w-[280px] h-full transition-transform duration-500 group-hover:scale-105" />
+          <div className="logo-golden w-[220px] md:w-[280px] h-full" />
         </Link>
 
         {/* Desktop Menu */}
