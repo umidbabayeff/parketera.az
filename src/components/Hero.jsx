@@ -5,36 +5,31 @@ import CalculatorModal from './CalculatorModal';
 
 const Hero = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    '/images/slider/slide1.png',
-    '/images/slider/slide2.png',
-    '/images/slider/slide3.jpg',
-    '/images/slider/slide4.png'
-  ];
-
+  const [frameIndex, setFrameIndex] = useState(1);
+  const totalFrames = 288;
+  
+  // High-performance frequency (approx 12-15 FPS)
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+      setFrameIndex((prev) => (prev % totalFrames) + 1);
+    }, 70); // 70ms = ~14 FPS
     return () => clearInterval(timer);
   }, []);
 
+  const getFramePath = (id) => {
+    const formattedId = id.toString().padStart(3, '0');
+    return `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
+  };
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Slideshow Background */}
+      {/* Frame Sequence Background */}
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentSlide}
-            src={slides[currentSlide]}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.5, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="w-full h-full object-cover"
-          />
-        </AnimatePresence>
+        <img
+          src={getFramePath(frameIndex)}
+          className="w-full h-full object-cover opacity-60 transition-opacity duration-300"
+          alt="Parquet background"
+        />
         
         {/* Minimal gradient for text contrast only at the bottom/left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-[1]" />
