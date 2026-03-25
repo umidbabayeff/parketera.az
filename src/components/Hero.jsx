@@ -1,27 +1,44 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import CalculatorModal from './CalculatorModal';
 
 const Hero = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    '/images/slider/slide1.png',
+    '/images/slider/slide2.png',
+    '/images/slider/slide3.jpg',
+    '/images/slider/slide4.png'
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Video Background with Vignette */}
+      {/* Slideshow Background */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover opacity-60"
-        >
-          <source src="/video/hero.mp4" type="video/mp4" />
-        </video>
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentSlide}
+            src={slides[currentSlide]}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 0.5, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        
         {/* Minimal gradient for text contrast only at the bottom/left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-[1]" />
       </div>
 
       <div className="container relative z-10 px-8 mx-auto">
