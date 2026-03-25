@@ -6,18 +6,20 @@ import CalculatorModal from './CalculatorModal';
 const Hero = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [frameIndex, setFrameIndex] = useState(1);
-  const totalFrames = 288;
+  const totalFrames = 72; // Optimized from 288 for web performance
   
   // High-performance frequency (approx 12-15 FPS)
   React.useEffect(() => {
     const timer = setInterval(() => {
       setFrameIndex((prev) => (prev % totalFrames) + 1);
-    }, 70); // 70ms = ~14 FPS
+    }, 80); // ~12 FPS
     return () => clearInterval(timer);
   }, []);
 
   const getFramePath = (id) => {
-    const formattedId = id.toString().padStart(3, '0');
+    // Current id is 1-72, actual frames are 1, 5, 9...
+    const actualFrame = ((id - 1) * 4) + 1;
+    const formattedId = actualFrame.toString().padStart(3, '0');
     return `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
   };
 
