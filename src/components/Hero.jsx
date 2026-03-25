@@ -8,17 +8,20 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Background with Vignette */}
+      {/* Video Background with Vignette */}
       <div className="absolute inset-0 z-0">
-        <motion.div 
-          initial={{ scale: 1.15, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="w-full h-full bg-[url('/images/hero.jpg')] bg-cover bg-center"
-        />
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover opacity-60"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
         {/* Minimal gradient for text contrast only at the bottom/left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent z-1" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-1" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[1]" />
       </div>
 
       <div className="container relative z-10 px-8 mx-auto">
