@@ -23,10 +23,10 @@ const CategoryDetail = () => {
     if (data) {
       setProducts(data.map(p => ({
         ...p,
-        categoryId: p.category_id,
+        categoryId: p.categoryId || p.category_id,
         color: p.color || '',
-        image: p.image_url || p.image,
-        inStock: p.in_stock || p.inStock
+        image: p.image || p.image_url,
+        inStock: p.inStock || p.in_stock
       })));
     }
     setLoading(false);

@@ -62,7 +62,8 @@ const CustomSelect = ({ label, value, options, onChange }) => {
 const CalculatorModal = ({ isOpen, onClose }) => {
   const [area, setArea] = useState('');
   const [parquetType, setParquetType] = useState('bambuk');
-  const [glueType, setGlueType] = useState('standard');
+  const [glueType, setGlueType] = useState('1k');
+  const [glueQuantity, setGlueQuantity] = useState('1');
   const [includesInstallation, setIncludesInstallation] = useState(false);
 
   const parquetOptions = [
@@ -74,9 +75,8 @@ const CalculatorModal = ({ isOpen, onClose }) => {
   ];
 
   const glueOptions = [
-    { value: 'none', label: 'Yoxdur (0 AZN/m²)' },
-    { value: 'standard', label: 'Standart (~8 AZN/m²)' },
-    { value: 'premium', label: 'Premium Tovcol MS (~15 AZN/m²)' },
+    { value: '1k', label: '1 Komponent (~180 AZN)' },
+    { value: '2k', label: '2 Komponent (~140 AZN)' },
   ];
 
   const prices = {
@@ -88,17 +88,19 @@ const CalculatorModal = ({ isOpen, onClose }) => {
   };
 
   const gluePrices = {
-    none: 0,
-    standard: 8,
-    premium: 15,
+    '1k': 180,
+    '2k': 140,
   };
 
   const installationPrice = 12;
 
   const calculateTotal = () => {
     const numArea = parseFloat(area) || 0;
+    const numGlue = parseFloat(glueQuantity) || 0;
+    
     let basePrice = numArea * prices[parquetType];
-    basePrice += numArea * gluePrices[glueType];
+    basePrice += numGlue * gluePrices[glueType];
+    
     if (includesInstallation) {
       basePrice += numArea * installationPrice;
     }
@@ -121,7 +123,7 @@ const CalculatorModal = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-neutral-900 border border-white/10 p-8 shadow-2xl overflow-y-auto max-h-[90vh]"
+            className="relative w-full max-w-2xl bg-neutral-900 border border-white/10 p-8 shadow-2xl overflow-y-auto max-h-[90vh]"
           >
             <button 
               onClick={onClose}
@@ -141,30 +143,41 @@ const CalculatorModal = ({ isOpen, onClose }) => {
             </div>
 
             <div className="space-y-6">
-              <div>
-                <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-3">Məkanın Sahəsi (m²)</label>
-                <input 
-                   type="number" 
-                   value={area}
-                   onChange={(e) => setArea(e.target.value)}
-                   placeholder="Məsələn, 50"
-                   className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-accent-gold transition-colors font-light"
-                />
-              </div>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-3">Məkanın Sahəsi (m²)</label>
+                  <input 
+                     type="number" 
+                     value={area}
+                     onChange={(e) => setArea(e.target.value)}
+                     placeholder="Məsələn, 50"
+                     className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-accent-gold transition-colors font-light"
+                  />
+                </div>
                 <CustomSelect 
                   label="Parket Növü"
                   value={parquetType}
                   options={parquetOptions}
                   onChange={setParquetType}
                 />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <CustomSelect 
-                  label="Yapışdırıcı (Kley)"
+                  label="Yapışdırıcı növü"
                   value={glueType}
                   options={glueOptions}
                   onChange={setGlueType}
                 />
+                <div>
+                  <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-3">Yapışdırıcı miqdarı (ədəd)</label>
+                  <input 
+                     type="number" 
+                     value={glueQuantity}
+                     onChange={(e) => setGlueQuantity(e.target.value)}
+                     className="w-full bg-black/50 border border-white/10 text-white px-4 py-3 focus:outline-none focus:border-accent-gold transition-colors font-light"
+                  />
+                </div>
               </div>
 
               <div className="pt-2">
@@ -187,7 +200,20 @@ const CalculatorModal = ({ isOpen, onClose }) => {
                 <div className="text-4xl font-display text-accent-gold">
                   {calculateTotal().toLocaleString('az-AZ')} <span className="text-lg">AZN</span>
                 </div>
-                <p className="text-[9px] text-white/30 uppercase mt-4">* Bu qiymət yalnız təxminidir və xərcin həcmi rəsmi ölçü götürüldükdən sonra dəqiqləşəcəkdir.</p>
+                <div className="mt-4 space-y-1">
+                  <p className="text-[10px] text-white/60">
+                    Parket: {(parseFloat(area) * prices[parquetType] || 0).toLocaleString()} AZN
+                  </p>
+                  <p className="text-[10px] text-white/60">
+                    Yapışdırıcı ({glueOptions.find(o => o.value === glueType).label}): {(parseFloat(glueQuantity) * gluePrices[glueType] || 0).toLocaleString()} AZN
+                  </p>
+                  {includesInstallation && (
+                    <p className="text-[10px] text-white/60">
+                      Montaj: {(parseFloat(area) * installationPrice || 0).toLocaleString()} AZN
+                    </p>
+                  )}
+                </div>
+                <p className="text-[9px] text-white/30 uppercase mt-6 font-medium">* Bu qiymət yalnız təxminidir və xərcin həcmi rəsmi ölçü götürüldükdən sonra dəqiqləşəcəkdir.</p>
               </div>
             </div>
           </motion.div>
