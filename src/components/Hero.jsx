@@ -5,32 +5,58 @@ import CalculatorModal from './CalculatorModal';
 
 const Hero = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [frameIndex, setFrameIndex] = useState(1);
-  const totalFrames = 72; // Optimized from 288 for web performance
+  const canvasRef = React.useRef(null);
+  const totalFrames = 72;
+  const frames = React.useRef([]);
   
-  // High-performance frequency (approx 12-15 FPS)
+  // Preload frames
   React.useEffect(() => {
-    const timer = setInterval(() => {
-      setFrameIndex((prev) => (prev % totalFrames) + 1);
-    }, 80); // ~12 FPS
+    let loadedCount = 0;
+    for (let i = 1; i <= totalFrames; i++) {
+      const img = new Image();
+      const actualFrame = ((i - 1) * 4) + 1;
+      const formattedId = actualFrame.toString().padStart(3, '0');
+      img.src = `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
+      img.onload = () => {
+        loadedCount++;
+      };
+      frames.current.push(img);
+    }
+
+    let frameIndex = 0;
+    const render = () => {
+      const canvas = canvasRef.current;
+      if (canvas && frames.current[frameIndex]) {
+        const ctx = canvas.getContext('2d');
+        const img = frames.current[frameIndex];
+        
+        // Match canvas size to display size
+        if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+          canvas.width = canvas.clientWidth;
+          canvas.height = canvas.clientHeight;
+        }
+
+        // Draw with cover fit
+        const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+        const x = (canvas.width / 2) - (img.width / 2) * scale;
+        const y = (canvas.height / 2) - (img.height / 2) * scale;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+      }
+      frameIndex = (frameIndex + 1) % totalFrames;
+    };
+
+    const timer = setInterval(render, 80); // ~12 FPS
     return () => clearInterval(timer);
   }, []);
 
-  const getFramePath = (id) => {
-    // Current id is 1-72, actual frames are 1, 5, 9...
-    const actualFrame = ((id - 1) * 4) + 1;
-    const formattedId = actualFrame.toString().padStart(3, '0');
-    return `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
-  };
-
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Frame Sequence Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={getFramePath(frameIndex)}
-          className="w-full h-full object-cover opacity-60 transition-opacity duration-300"
-          alt="Parquet background"
+      {/* Canvas Background Sequence */}
+      <div className="absolute inset-0 z-0 opacity-60">
+        <canvas
+          ref={canvasRef}
+          className="w-full h-full object-cover"
         />
         
         {/* Minimal gradient for text contrast only at the bottom/left */}
