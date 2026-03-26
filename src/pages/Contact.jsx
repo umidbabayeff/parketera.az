@@ -28,7 +28,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Ünvan</h4>
-                    <p className="text-xl font-light">Bakı ş., Nərimanov r., <br /> Heydər Əliyev pr. 115</p>
+                    <p className="text-xl font-light">Bakı ş., Ceyhun bəy Hacıbəyli <br /> küç. 32A</p>
                   </div>
                 </div>
               </div>
