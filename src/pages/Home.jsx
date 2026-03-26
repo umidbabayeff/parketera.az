@@ -11,15 +11,15 @@ const Home = () => {
         <div className="max-w-[1600px] px-8 md:px-12 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
             <div className="flex flex-col gap-6">
-              <span className="text-accent-gold text-2xl font-display italic">01. Precision</span>
+              <span className="text-accent-gold text-2xl font-display italic">01. Dəqiqlik</span>
               <p className="text-white/40 text-sm leading-relaxed">Hər bir plankanın yerləşdirilməsində riyazi dəqiqlik və sənətkarlıq tələb olunur.</p>
             </div>
             <div className="flex flex-col gap-6">
-              <span className="text-accent-gold text-2xl font-display italic">02. Heritage</span>
+              <span className="text-accent-gold text-2xl font-display italic">02. İrs</span>
               <p className="text-white/40 text-sm leading-relaxed">Ənənəvi iş üsullarını müasir texnologiyalarla birləşdirərək uzun ömürlü nəticələr əldə edirik.</p>
             </div>
             <div className="flex flex-col gap-6">
-              <span className="text-accent-gold text-2xl font-display italic">03. Quality</span>
+              <span className="text-accent-gold text-2xl font-display italic">03. Keyfiyyət</span>
               <p className="text-white/40 text-sm leading-relaxed">Dünyanın ən prestijli brendlərindən seçilmiş xammal və materiallar.</p>
             </div>
           </div>
