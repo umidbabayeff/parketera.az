@@ -230,7 +230,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
-              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-80 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none"
+              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-80 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50"
             >
               <div className="flex justify-between items-center mb-6">
                 <h4 className="text-white text-xs uppercase tracking-widest font-bold">
@@ -282,7 +282,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
-              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-96 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none max-h-[85vh] flex flex-col"
+              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-96 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 max-h-[85vh] flex flex-col"
             >
               <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-6">
                 {t('cart.title')}
@@ -295,7 +295,7 @@ const Navbar = () => {
                 </div>
               ) : (
                 <>
-                  <div className="flex-1 overflow-y-auto mb-8 min-h-[30vh] md:min-h-0 md:max-h-[400px] custom-scrollbar pr-2">
+                  <div className="overflow-y-auto mb-8 max-h-[50vh] md:max-h-[400px] custom-scrollbar pr-2 space-y-4">
                     {cartItems.map(item => (
                       <div key={item.id} className="flex items-center gap-4 group border-b border-white/5 pb-4 last:border-0">
                         <Link to={`/mehsul/${item.id}`} className="w-16 h-16 bg-black border border-white/5 overflow-hidden shrink-0">
