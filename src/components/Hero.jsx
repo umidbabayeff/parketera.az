@@ -74,7 +74,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-[55vh] md:h-screen min-h-[450px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black mt-[70px] md:mt-0">
       {/* Canvas Background Sequence (Desktop) or Static Image (Mobile) */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isLoaded ? 'opacity-60' : 'opacity-0'}`}>
         <img 
