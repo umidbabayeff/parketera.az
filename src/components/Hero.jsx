@@ -14,6 +14,12 @@ const Hero = () => {
   
   // Preload frames
   React.useEffect(() => {
+    // Disable heavy sequence on mobile to save performance and prevent jank
+    if (window.innerWidth < 768) {
+      setIsLoaded(true);
+      return;
+    }
+
     let loadedCount = 0;
     const preloadFrames = [];
 
@@ -69,11 +75,16 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Canvas Background Sequence */}
+      {/* Canvas Background Sequence (Desktop) or Static Image (Mobile) */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isLoaded ? 'opacity-60' : 'opacity-0'}`}>
+        <img 
+          src="/images/hero_frames/ezgif-frame-001.jpg" 
+          alt="Parketera Premium" 
+          className="w-full h-full object-cover md:hidden" 
+        />
         <canvas
           ref={canvasRef}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden md:block"
         />
         
         {/* Minimal gradient for text contrast only at the bottom/left */}
