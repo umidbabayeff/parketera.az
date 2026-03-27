@@ -99,10 +99,10 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
           >
-            <span className="inline-block px-4 py-1 border border-accent-gold/30 text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-8 backdrop-blur-sm">
+            <span className="inline-block px-4 md:px-6 py-1 md:py-2 border border-accent-gold/30 text-accent-gold uppercase tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm font-bold mb-6 md:mb-8 backdrop-blur-sm">
               {t('hero.subtitle')}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-display leading-[1.1] text-white mb-8 md:mb-12 tracking-tight text-shadow-premium">
+            <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[6rem] font-display leading-[1.15] text-white mb-8 md:mb-12 tracking-tight text-shadow-premium">
               {t('hero.title_line1')} <br /> 
               <span className="italic pl-4 md:pl-10 text-white">{t('hero.title_italic')}</span>
             </h1>
