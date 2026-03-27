@@ -117,7 +117,7 @@ const QuizModal = ({ isOpen, onClose, products }) => {
                     <span className="text-accent-gold text-[10px] uppercase tracking-[0.4em] font-bold">
                       {String(step).padStart(2, '0')} / {String(quizQuestions.length).padStart(2, '0')}
                     </span>
-                    <span className="text-white/20 text-[10px] uppercase tracking-widest font-bold">
+                    <span className="text-white/20 text-[10px] uppercase tracking-widest font-bold pr-8 md:pr-0 text-right">
                       Parketera Assistant
                     </span>
                   </div>
