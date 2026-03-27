@@ -2,8 +2,23 @@
 <html lang="az">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Resource Hints: Preconnect to external origins used by the app -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.whatsapp.com" />
+    <link rel="dns-prefetch" href="https://jjsfitfkivvdnpipesig.supabase.co" />
+
+    <!-- LCP Optimization: Preload the hero image so the browser fetches it ASAP -->
+    <link rel="preload" as="image" href="/images/hero_frames/ezgif-frame-001.webp" fetchpriority="high" />
+
+    <!-- Critical CSS: Prevent flash of unstyled content (FOUC) -->
+    <style>
+      body { margin: 0; padding: 0; background: #0a0a0a; color: #ffffff; }
+      #root { min-height: 100vh; }
+    </style>
     <title>Parketera | Premium Parket və Laminat Döşəmə - Bakı</title>
     <meta name="description" content="Parketera - Bakıda premium parket və laminat döşəmə xidmətləri. Eksklüziv parket kolleksiyası, peşəkar quraşdırma, pulsuz ölçü xidməti. Keyfiyyətli döşəmə örtükləri." />
     <meta name="keywords" content="parket, laminat, döşəmə, Bakı, parket quraşdırma, laminat satışı, parketera, premium parket" />
@@ -11,7 +26,7 @@
     <meta property="og:description" content="Eksklüziv parket kolleksiyası və peşəkar döşəmə xidmətləri. Hər addımda keyfiyyəti hiss edin." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://parketera.az" />
-    <meta property="og:image" content="https://parketera.az/images/hero.jpg" />
+    <meta property="og:image" content="https://parketera.az/images/hero.webp" />
     <meta property="og:locale" content="az_AZ" />
   </head>
   <body>
