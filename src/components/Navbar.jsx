@@ -63,8 +63,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 ${isScrolled ? 'py-2 bg-black/90 backdrop-blur-2xl border-b border-white/5' : 'py-5 bg-black/40 backdrop-blur-sm'}`}>
-      <div className="max-w-[1600px] px-8 md:px-12 mx-auto flex justify-between items-center">
+    <>
+      <nav className={`fixed top-0 left-0 w-full z-50 ${isScrolled ? 'py-2 bg-black/90 backdrop-blur-2xl border-b border-white/5' : 'py-5 bg-black/40 backdrop-blur-sm'}`}>
+        <div className="max-w-[1600px] px-8 md:px-12 mx-auto flex justify-between items-center">
         <Link to="/" className="group flex items-center h-[50px] md:h-[60px]">
           <div className="logo-golden w-[140px] sm:w-[220px] md:w-[280px] h-full" />
         </Link>
@@ -218,17 +219,18 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </nav>
 
-      {/* Relocated Modals for Mobile Access */}
+      {/* Relocated Modals for Mobile Access - MUST BE OUTSIDE NAV DUE TO BACKDROP-BLUR CREATING A CONTAINING BLOCK */}
       <AnimatePresence>
         {isCompareOpen && (
           <>
-            <div className="fixed inset-0 z-[45]" onClick={() => setIsCompareOpen(false)} />
+            <div className="fixed inset-0 z-[45] bg-black/50" onClick={() => setIsCompareOpen(false)} />
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
-              className="fixed md:absolute bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-80 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none"
+              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-80 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none"
             >
               <div className="flex justify-between items-center mb-6">
                 <h4 className="text-white text-xs uppercase tracking-widest font-bold">
@@ -275,12 +277,12 @@ const Navbar = () => {
       <AnimatePresence>
         {isCartOpen && (
           <>
-            <div className="fixed inset-0 z-[45]" onClick={() => setIsCartOpen(false)} />
+            <div className="fixed inset-0 z-[45] bg-black/50" onClick={() => setIsCartOpen(false)} />
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.95 }}
-              className="fixed md:absolute bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-96 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none max-h-[85vh] flex flex-col"
+              className="fixed bottom-0 md:bottom-auto left-0 md:left-auto right-0 md:right-12 top-auto md:top-[90px] w-full md:w-96 bg-neutral-900 border-t md:border border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)] md:shadow-2xl p-6 md:p-8 backdrop-blur-xl origin-bottom md:origin-top-right z-50 rounded-t-3xl md:rounded-none max-h-[85vh] flex flex-col"
             >
               <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-6">
                 {t('cart.title')}
@@ -338,7 +340,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 };
 
