@@ -43,7 +43,7 @@ const Contact = () => {
                   <h4 className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-4">{t('contact.phone')}</h4>
                   <div className="flex flex-col gap-2">
                     <p className="text-xl font-light group cursor-pointer hover:text-accent-gold transition-colors">
-                      <a href="tel:+994702772277">+994 70 277 22 77</a>
+                      <a href="tel:+994702772240">+994 70 277 22 40</a>
                     </p>
                     <p className="text-xl font-light group cursor-pointer hover:text-accent-gold transition-colors">
                       <a href="https://wa.me/994702772240" target="_blank" rel="noopener noreferrer">+994 70 277 22 40</a>

@@ -168,7 +168,7 @@ const CalculatorModal = ({ isOpen, onClose, preselectedProduct = null }) => {
       `Total: ${totalCost.toLocaleString()} AZN`
     );
 
-    window.open(`https://wa.me/994702772277?text=${message}`, '_blank');
+    window.open(`https://wa.me/994702772240?text=${message}`, '_blank');
   };
 
   const handleAddToCart = () => {

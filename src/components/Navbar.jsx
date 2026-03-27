@@ -24,7 +24,7 @@ const Navbar = () => {
   } = useCart() || {};
 
   const handleCheckout = () => {
-    const phone = "994702772277";
+    const phone = "994702772240";
     const itemsList = cartItems.map(item => 
       `• ${item.name} (${item.quantity} ${item.unit || 'm²'}) - ${((item.price || 0) * item.quantity).toFixed(2)} AZN`
     ).join('%0A');
@@ -246,7 +246,7 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
 
-            <a href="tel:+994702772277" className="btn-primary flex items-center gap-3 px-8 py-4 rounded-none uppercase tracking-[0.2em] text-[12px]">
+            <a href="tel:+994702772240" className="btn-primary flex items-center gap-3 px-8 py-4 rounded-none uppercase tracking-[0.2em] text-[12px]">
               <Phone size={14} strokeWidth={2.5} />
               <span>{t('nav.zeng_edin')}</span>
             </a>
@@ -314,7 +314,7 @@ const Navbar = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col items-center gap-6"
             >
-              <a href="tel:+994702772277" className="btn-primary mt-10">
+              <a href="tel:+994702772240" className="btn-primary mt-10">
                 {t('nav.zeng_edin')}
               </a>
               
