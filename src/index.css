@@ -69,6 +69,7 @@
     }
   }
 
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 3px;
   }
@@ -81,6 +82,16 @@
   }
   .custom-scrollbar:hover::-webkit-scrollbar-thumb {
     background: rgba(197, 160, 89, 0.5);
+  }
+
+  .blog-content h2 {
+    @apply text-3xl md:text-4xl text-white mb-6 mt-12;
+  }
+  .blog-content h3 {
+    @apply text-xl md:text-2xl text-accent-gold mb-4 mt-8 uppercase tracking-widest;
+  }
+  .blog-content p {
+    @apply mb-6 text-white/70 leading-relaxed;
   }
 }
 

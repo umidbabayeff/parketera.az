@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ArrowLeft } from 'lucide-react';
 import { categories } from '../data/products';
 import { supabase } from '../lib/supabase';
 
 const CategoryDetail = () => {
   const { id } = useParams();
+  const { t } = useTranslation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -36,8 +38,8 @@ const CategoryDetail = () => {
     return (
       <div className="min-h-screen bg-[#050505] flex items-center justify-center pt-32 pb-20">
         <div className="text-center text-white">
-          <h2 className="text-3xl font-display mb-4">Kateqoriya tapılmadı</h2>
-          <Link to="/" className="text-accent-gold hover:underline">Ana səhifəyə qayıt</Link>
+          <h2 className="text-3xl font-display mb-4">{t('category.not_found')}</h2>
+          <Link to="/" className="text-accent-gold hover:underline">{t('category.back_to_home')}</Link>
         </div>
       </div>
     );
@@ -47,7 +49,7 @@ const CategoryDetail = () => {
     <div className="bg-[#050505] min-h-screen pt-32 pb-20">
       <div className="max-w-[1600px] px-8 md:px-12 mx-auto">
         <Link to="/katalog" className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors uppercase tracking-[0.2em] text-[10px] font-bold mb-12">
-          <ArrowLeft size={14} /> Kataloqa Qayıt
+          <ArrowLeft size={14} /> {t('product.back_to_catalog')}
         </Link>
 
         {/* Hero Section for Category */}
@@ -57,12 +59,12 @@ const CategoryDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">Kolleksiya</span>
+            <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">{t('category.collection_label')}</span>
             <h1 className="text-5xl md:text-7xl font-display text-white mb-6 leading-tight">
-              {category.name}
+              {t(`categories.${category.id}.name`, category.name)}
             </h1>
             <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
-              {category.description}
+              {t(`categories.${category.id}.desc`, category.description)}
             </p>
           </motion.div>
           
@@ -86,13 +88,13 @@ const CategoryDetail = () => {
         >
           <div className="flex items-center gap-4 mb-12">
             <span className="w-12 h-[1px] bg-accent-gold" />
-            <h2 className="text-3xl font-display text-white">Bütün Modellər</h2>
+            <h2 className="text-3xl font-display text-white">{t('category.all_models')}</h2>
           </div>
           
           {loading ? (
-             <div className="text-white/50 py-10">Məhsullar yüklənir...</div>
+             <div className="text-white/50 py-10">{t('catalog.loading')}</div>
           ) : products.length === 0 ? (
-             <div className="text-white/50 py-10">Bu kateqoriyada məhsul yoxdur.</div>
+             <div className="text-white/50 py-10">{t('category.no_products')}</div>
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
               {products.map((product, idx) => (
@@ -102,24 +104,23 @@ const CategoryDetail = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group cursor-pointer flex flex-col h-full"
+                  className="group"
                 >
-                  <div className="relative h-[240px] md:h-[400px] lg:h-[480px] overflow-hidden bg-neutral-900 border border-white/5 mb-4 md:mb-6 rounded-[2px]">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-80" />
-                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    
-                    <Link 
-                      to={`/mehsul/${product.id}`}
-                      className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 text-center block"
-                    >
-                      <span className="w-full py-2 md:py-4 bg-white text-black font-bold uppercase tracking-widest text-[8px] md:text-[10px] hover:bg-accent-gold hover:text-black transition-colors block">
-                        Ətraflı Bax
-                      </span>
-                    </Link>
-                  </div>
-                  <Link to={`/mehsul/${product.id}`} className="block mt-auto">
-                    <h3 className="text-sm md:text-xl font-display text-white mb-1 md:mb-2 group-hover:text-accent-gold transition-colors">{product.name}</h3>
-                    <p className="text-white/40 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em]">{product.color}</p>
+                  <Link to={`/mehsul/${product.id}`} className="flex flex-col h-full cursor-pointer">
+                    <div className="relative h-[240px] md:h-[400px] lg:h-[480px] overflow-hidden bg-neutral-900 border border-white/5 mb-4 md:mb-6 rounded-[2px]">
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-80" />
+                      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      
+                      <div className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 text-center">
+                        <span className="w-full py-2 md:py-4 bg-white text-black font-bold uppercase tracking-widest text-[8px] md:text-[10px] group-hover:bg-accent-gold transition-colors block leading-none">
+                          {t('product.view_details')}
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-sm md:text-xl font-display text-white mb-1 md:mb-2 group-hover:text-accent-gold transition-colors">{product.name}</h3>
+                      <p className="text-white/40 text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em]">{product.color}</p>
+                    </div>
                   </Link>
                 </motion.div>
               ))}

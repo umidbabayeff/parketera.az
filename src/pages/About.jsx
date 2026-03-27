@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
   return (
     <div className="pt-32 pb-20 bg-bg-dark">
       <div className="max-w-[1600px] px-8 md:px-12 mx-auto">
@@ -12,19 +14,19 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">Haqqımızda</span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display mb-10 leading-tight">Parket Sahəsində <br className="hidden md:block"/> <span className="luxury-gradient italic">30 İllik Təcrübə</span></h1>
+            <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">{t('about.title')}</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display mb-10 leading-tight">{t('about.heading')} <br className="hidden md:block"/> <span className="luxury-gradient italic">{t('about.heading_italic')}</span></h1>
             <p className="text-white/60 text-lg font-light leading-relaxed mb-8">
-              Parketera olaraq, biz sadəcə döşəmə örtükləri satmırıq — biz sizin məkanınızın təməlini və atmosferini yaradırıq. 30 ildən artıq təcrübəmizlə, Azərbaycan bazarında ən keyfiyyətli ağac materiallarını sənətkarlıqla birləşdiririk.
+              {t('about.description')}
             </p>
             <div className="grid grid-cols-2 gap-10 mt-12">
               <div>
                 <h4 className="text-accent-gold text-3xl font-display mb-2">500+</h4>
-                <p className="text-white/40 text-xs uppercase tracking-widest font-bold">Tamamlanmış Layihə</p>
+                <p className="text-white/40 text-xs uppercase tracking-widest font-bold">{t('about.stats.projects')}</p>
               </div>
               <div>
                 <h4 className="text-accent-gold text-3xl font-display mb-2">30+</h4>
-                <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-widest font-bold">Parket Sahəsində İllik Təcrübə</p>
+                <p className="text-white/40 text-[10px] md:text-xs uppercase tracking-widest font-bold">{t('about.stats.experience')}</p>
               </div>
             </div>
           </motion.div>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { categories } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import { supabase } from '../lib/supabase';
 
 const Catalog = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
@@ -62,6 +64,12 @@ const Catalog = () => {
     setSelectedSubType(null);
   };
 
+  // Helper for dynamic labels in translations
+  const L = (key, defaultVal) => {
+    const translated = t(key);
+    return translated === key ? defaultVal : translated;
+  };
+
   const bambukSubCategories = {
     'Dekorativ': ['Herringbone', 'Düz'],
     'Sadə': ['Parlaq', 'Mat'],
@@ -83,9 +91,9 @@ const Catalog = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12 md:mb-20"
         >
-          <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">Məhsul Portfeli</span>
+          <span className="text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block border-l-2 border-accent-gold pl-4">{t('catalog.portfolio', 'Məhsul Portfeli')}</span>
           <h1 className="text-5xl md:text-7xl font-display leading-tight text-white shadow-sm">
-            Eksklüziv <span className="luxury-gradient italic">Kataloq</span>
+            {t('specs.exclusive')} <span className="luxury-gradient italic">{t('nav.katalog')}</span>
           </h1>
         </motion.div>
 
@@ -96,11 +104,11 @@ const Catalog = () => {
             <div className="space-y-10 pr-2 pb-10">
               {/* Search */}
               <div>
-                <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Axtarış</h4>
+                <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">{t('catalog.search', 'Axtarış')}</h4>
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Məhsul adı və ya rəng..."
+                    placeholder={t('catalog.search_placeholder', 'Məhsul adı və ya rəng...')}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full bg-neutral-900 border border-white/10 rounded-[2px] text-white px-4 py-3 pl-10 focus:outline-none focus:border-accent-gold transition-colors"
@@ -111,7 +119,7 @@ const Catalog = () => {
 
               {/* Categories */}
               <div>
-                <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Kateqoriyalar</h4>
+                <h4 className="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">{t('catalog.categories', 'Kateqoriyalar')}</h4>
                 <div className="space-y-4">
                   {categories.map((cat) => (
                     <div key={cat.id} className="space-y-3">
@@ -120,7 +128,7 @@ const Catalog = () => {
                           {selectedCategories.includes(cat.id) && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-2.5 h-2.5 bg-black" />}
                         </div>
                         <span className={`text-sm tracking-wide transition-colors ${selectedCategories.includes(cat.id) ? 'text-white font-medium' : 'text-white/60 group-hover:text-white'}`}>
-                          {cat.name}
+                          {t(`categories.${cat.id}.name`, cat.name)}
                         </span>
                       </label>
 
@@ -138,7 +146,7 @@ const Catalog = () => {
                                   {selectedSubCategory === subCat && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-1.5 h-1.5 bg-accent-gold" />}
                                 </div>
                                 <span className={`text-[12px] transition-colors ${selectedSubCategory === subCat ? 'text-accent-gold' : 'text-white/50 group-hover:text-white/70'}`}>
-                                  {subCat}
+                                  {t(`subcats.${subCat}`, subCat)}
                                 </span>
                               </label>
 
@@ -153,7 +161,7 @@ const Catalog = () => {
                                     <label key={type} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); setSelectedSubType(selectedSubType === type ? null : type); }}>
                                       <div className={`w-1.5 h-1.5 rounded-full border transition-colors ${selectedSubType === type ? 'bg-accent-gold border-accent-gold' : 'border-white/20 group-hover:border-white/40'}`} />
                                       <span className={`text-[10px] uppercase tracking-widest transition-colors ${selectedSubType === type ? 'text-white' : 'text-white/30 group-hover:text-white/50'}`}>
-                                        {type}
+                                        {t(`subcats.${type}`, type)}
                                       </span>
                                     </label>
                                   ))}
@@ -177,7 +185,7 @@ const Catalog = () => {
                                 {selectedSubCategory === subCat && <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-1.5 h-1.5 bg-accent-gold" />}
                               </div>
                               <span className={`text-[12px] transition-colors ${selectedSubCategory === subCat ? 'text-accent-gold' : 'text-white/50 group-hover:text-white/70'}`}>
-                                {subCat}
+                                {t(`subcats.${subCat}`, subCat)}
                               </span>
                             </label>
                           ))}
@@ -195,7 +203,7 @@ const Catalog = () => {
                   onClick={clearFilters}
                   className="text-accent-gold text-[10px] uppercase tracking-widest hover:underline pt-4 block"
                 >
-                  Filterləri Təmizlə ({selectedCategories.length + (searchTerm ? 1 : 0) + (selectedSubCategory ? 1 : 0) + (selectedSubType ? 1 : 0)})
+                  {t('catalog.clear_filters', 'Filterləri Təmizlə')} ({selectedCategories.length + (searchTerm ? 1 : 0) + (selectedSubCategory ? 1 : 0) + (selectedSubType ? 1 : 0)})
                 </button>
               )}
             </div>
@@ -205,20 +213,20 @@ const Catalog = () => {
           <div className="flex-1">
             {loading ? (
               <div className="h-64 flex items-center justify-center border border-white/5 bg-neutral-900/50">
-                 <p className="text-white/40 text-sm">Yüklənir...</p>
+                 <p className="text-white/40 text-sm">{t('catalog.loading', 'Yüklənir...')}</p>
               </div>
             ) : filteredProducts.length === 0 ? (
               <div className="h-64 flex flex-col items-center justify-center border border-white/5 bg-neutral-900/50">
-                <h3 className="text-white text-xl font-display mb-2">Məhsul Tapılmadı</h3>
-                <p className="text-white/40 text-sm">Axtarış meyarlarınıza uyğun məhsul yoxdur.</p>
+                <h3 className="text-white text-xl font-display mb-2">{t('catalog.no_products_title', 'Məhsul Tapılmadı')}</h3>
+                <p className="text-white/40 text-sm">{t('catalog.no_products_text', 'Axtarış meyarlarınıza uyğun məhsul yoxdur.')}</p>
                 <button onClick={clearFilters} className="mt-6 btn-primary px-6 py-2 uppercase tracking-widest text-[10px] bg-accent-gold text-black">
-                  Filterləri Sıfırla
+                  {t('catalog.reset_filters', 'Filterləri Sıfırla')}
                 </button>
               </div>
             ) : (
               <div>
                 <div className="mb-6 text-white/40 text-sm">
-                  Cəmi <span className="text-white font-bold">{filteredProducts.length}</span> məhsul tapıldı
+                  {t('catalog.found_start', 'Cəmi')} <span className="text-white font-bold">{filteredProducts.length}</span> {t('catalog.found_end', 'məhsul tapıldı')}
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-10">
                   {filteredProducts.map((product, index) => (

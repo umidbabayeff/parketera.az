@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Calculator } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import CalculatorModal from './CalculatorModal';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const canvasRef = React.useRef(null);
   const totalFrames = 72;
@@ -87,15 +89,15 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
           >
             <span className="inline-block px-4 py-1 border border-accent-gold/30 text-accent-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-8 backdrop-blur-sm">
-              Eksklüziv Parket Dünyası
+              {t('hero.subtitle')}
             </span>
-            <h1 className="text-5xl md:text-[5rem] font-display leading-[1.1] text-white mb-12 tracking-tight text-shadow-premium">
-              Hər Addımda <br /> 
-              <span className="italic pl-4 md:pl-10 text-white">Keyfiyyəti Hiss Edin</span>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] font-display leading-[1.1] text-white mb-8 md:mb-12 tracking-tight text-shadow-premium">
+              {t('hero.title_line1')} <br /> 
+              <span className="italic pl-4 md:pl-10 text-white">{t('hero.title_italic')}</span>
             </h1>
             <div className="flex flex-wrap gap-8 items-center">
               <button className="btn-primary flex items-center gap-4 px-10 py-5 group bg-accent-gold border-none rounded-none">
-                <span className="uppercase tracking-[0.2em] text-[12px] font-bold text-black">Kolleksiyanı kəşf et</span>
+                <span className="uppercase tracking-[0.2em] text-[12px] font-bold text-black">{t('hero.discover')}</span>
                 <ChevronRight size={18} className="text-black group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
@@ -105,7 +107,7 @@ const Hero = () => {
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-accent-gold transition-colors">
                   <Calculator size={18} className="text-accent-gold" />
                 </div>
-                <span className="uppercase tracking-[0.2em] text-[11px] font-bold text-white group-hover:text-accent-gold transition-colors text-shadow-premium">Kalkulyator</span>
+                <span className="uppercase tracking-[0.2em] text-[11px] font-bold text-white group-hover:text-accent-gold transition-colors text-shadow-premium">{t('hero.calculator')}</span>
               </button>
             </div>
           </motion.div>
@@ -117,7 +119,7 @@ const Hero = () => {
         <div className="flex flex-col items-center gap-6">
           <div className="w-[1px] h-32 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           <span className="text-white uppercase tracking-[0.5em] text-[9px] [writing-mode:vertical-lr] font-bold text-shadow-premium">
-            EST. 2012 / PREMIUM QUALITY
+            {t('hero.est')}
           </span>
         </div>
       </div>
