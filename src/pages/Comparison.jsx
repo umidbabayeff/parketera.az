@@ -54,27 +54,27 @@ const Comparison = () => {
           </button>
         </div>
 
-        <div className="overflow-x-auto overflow-y-hidden custom-scrollbar border border-white/5 bg-neutral-900/50 backdrop-blur-sm -mx-8 md:mx-0 px-8 md:px-0">
-          <table className="w-full border-collapse min-w-max md:min-w-[800px]">
+        <div className="overflow-hidden border border-white/5 bg-neutral-900/50 backdrop-blur-sm -mx-8 md:mx-0 px-8 md:px-0">
+          <table className="w-full border-collapse table-fixed md:table-auto md:min-w-[800px]">
             <thead>
               <tr>
-                <th className="min-w-[150px] md:w-1/5 p-4 md:p-8 text-left border-b border-r border-white/5 bg-black/20">
-                  <h3 className="text-white/20 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">{t('compare.specs')}</h3>
+                <th className="w-[100px] md:w-1/5 p-2 md:p-8 text-left border-b border-r border-white/5 bg-black/20 align-top">
+                  <h3 className="text-white/20 text-[8px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold mt-2">{t('compare.specs')}</h3>
                 </th>
                 {comparedProducts.map(product => (
-                  <th key={product.id} className="p-4 md:p-8 border-b border-r border-white/5 relative group min-w-[200px] md:min-w-[250px]">
+                  <th key={product.id} className="p-2 md:p-8 border-b border-r border-white/5 relative group">
                     <button 
                       onClick={() => removeFromCompare(product.id)}
-                      className="absolute top-4 right-4 text-white/20 hover:text-red-500 transition-colors"
+                      className="absolute top-2 md:top-4 right-2 md:right-4 text-white/20 hover:text-red-500 transition-colors z-10"
                     >
-                      <X size={18} />
+                      <X size={16} className="md:w-[18px] md:h-[18px]" />
                     </button>
-                    <div className="aspect-[4/3] bg-black border border-white/5 mb-6 overflow-hidden">
+                    <div className="aspect-[4/3] bg-black border border-white/5 mb-3 md:mb-6 overflow-hidden">
                       <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-80" />
                     </div>
-                    <Link to={`/mehsul/${product.id}`} className="block">
-                      <h4 className="text-white font-display text-lg mb-2 group-hover:text-accent-gold transition-colors">{product.name}</h4>
-                      <p className="text-accent-gold text-sm font-bold">{product.price} ₼ / m²</p>
+                    <Link to={`/mehsul/${product.id}`} className="block text-center md:text-left">
+                      <h4 className="text-white font-display text-sm md:text-lg mb-1 md:mb-2 group-hover:text-accent-gold transition-colors leading-tight line-clamp-2 md:line-clamp-none">{product.name}</h4>
+                      <p className="text-accent-gold text-[10px] md:text-sm font-bold block">{product.price} ₼ / m²</p>
                     </Link>
                   </th>
                 ))}
@@ -91,21 +91,21 @@ const Comparison = () => {
             <tbody>
               {specKeys.map(({ key, label, isBoolean }) => (
                 <tr key={key} className="group hover:bg-white/[0.02] transition-colors">
-                  <td className="p-4 md:p-8 border-r border-b border-white/5 bg-black/10">
-                    <span className="text-white/40 text-[9px] md:text-[10px] uppercase tracking-widest font-bold">{label}</span>
+                  <td className="p-2 md:p-8 border-r border-b border-white/5 bg-black/10">
+                    <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-widest font-bold leading-tight block">{label}</span>
                   </td>
                   {comparedProducts.map(product => (
-                    <td key={`${product.id}-${key}`} className="p-4 md:p-8 border-r border-b border-white/5 text-center">
+                    <td key={`${product.id}-${key}`} className="p-2 md:p-8 border-r border-b border-white/5 text-center break-words">
                       {isBoolean ? (
                         <div className="flex justify-center">
                           {product[key] ? (
-                            <Check className="text-accent-gold" size={20} />
+                            <Check className="text-accent-gold w-4 h-4 md:w-5 md:h-5" />
                           ) : (
-                            <Minus className="text-white/10" size={20} />
+                            <Minus className="text-white/10 w-4 h-4 md:w-5 md:h-5" />
                           )}
                         </div>
                       ) : (
-                        <span className="text-white/80 text-sm font-light">
+                        <span className="text-white/80 text-[10px] md:text-sm font-light leading-tight">
                           {product[key] || '-'}
                         </span>
                       )}
