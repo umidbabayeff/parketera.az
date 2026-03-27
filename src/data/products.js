@@ -4,37 +4,37 @@ export const categories = [
     "id": 1,
     "name": "Bambuk",
     "description": "Ekoloji və davamlı bambuk parketi. Müxtəlif rəng və naxış seçimləri ilə məkanınıza təbiət gözəlliyi qatır.",
-    "image": "/images/engineered.png"
+    "image": "/images/engineered.webp"
   },
   {
     "id": 2,
     "name": "Armoziya",
     "description": "Zərif və lüks görünüşlü Armoziya parketi.",
-    "image": "/images/massive.png"
+    "image": "/images/massive.webp"
   },
   {
     "id": 3,
     "name": "Merbau",
     "description": "Ekzotik ağac növlərindən hazırlanmış premium Merbau parket. Yüksək davamlılıq.",
-    "image": "/images/massive.png"
+    "image": "/images/massive.webp"
   },
   {
     "id": 4,
     "name": "Mühəndis Lövhəsi",
     "description": "Avropa keyfiyyətli mühəndis lövhələri. Müxtəlif ölçü və rəng variantları.",
-    "image": "/images/engineered.png"
+    "image": "/images/engineered.webp"
   },
   {
     "id": 8,
     "name": "Parket Kimyası",
     "description": "Təmizləyici vasitələr, yapışdırıcılar və digər parket qulluq məhsulları.",
-    "image": "/images/chemistry.png"
+    "image": "/images/chemistry.webp"
   },
   {
     "id": 6,
     "name": "Laminat",
     "description": "Yüksək keyfiyyətli və suya davamlı laminat döşəmələr.",
-    "image": "/images/engineered.png"
+    "image": "/images/engineered.webp"
   }
 ];
 
@@ -48,7 +48,7 @@ export const products = [
     "dimensions": "1020x130x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -74,7 +74,7 @@ export const products = [
     "dimensions": "1020x130x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -100,7 +100,7 @@ export const products = [
     "dimensions": "920x132x14",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -126,7 +126,7 @@ export const products = [
     "dimensions": "1020x130x15",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -152,7 +152,7 @@ export const products = [
     "dimensions": "1020x130x16",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -178,7 +178,7 @@ export const products = [
     "dimensions": "1020x130x17",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -204,7 +204,7 @@ export const products = [
     "dimensions": "1020x130x18",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -230,7 +230,7 @@ export const products = [
     "dimensions": "1020x130x19",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -256,7 +256,7 @@ export const products = [
     "dimensions": "1020x130x20",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -282,7 +282,7 @@ export const products = [
     "dimensions": "1020x130x21",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -308,7 +308,7 @@ export const products = [
     "dimensions": "1020x130x22",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -334,7 +334,7 @@ export const products = [
     "dimensions": "1020x130x23",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -360,7 +360,7 @@ export const products = [
     "dimensions": "1020x130x24",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -386,7 +386,7 @@ export const products = [
     "dimensions": "1020x130x25",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -412,7 +412,7 @@ export const products = [
     "dimensions": "1020x130x26",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -438,7 +438,7 @@ export const products = [
     "dimensions": "1020x130x27",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -464,7 +464,7 @@ export const products = [
     "dimensions": "1020x130x28",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -490,7 +490,7 @@ export const products = [
     "dimensions": "1020x130x29",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -516,7 +516,7 @@ export const products = [
     "dimensions": "1020x130x30",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -542,7 +542,7 @@ export const products = [
     "dimensions": "1020x130x31",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -568,7 +568,7 @@ export const products = [
     "dimensions": "1020x130x32",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -594,7 +594,7 @@ export const products = [
     "dimensions": "1020x130x33",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -620,7 +620,7 @@ export const products = [
     "dimensions": "1020x130x34",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -646,7 +646,7 @@ export const products = [
     "dimensions": "1020x130x35",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -672,7 +672,7 @@ export const products = [
     "dimensions": "1020x130x36",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -698,7 +698,7 @@ export const products = [
     "dimensions": "1020x130x37",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -724,7 +724,7 @@ export const products = [
     "dimensions": "1020x130x38",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -750,7 +750,7 @@ export const products = [
     "dimensions": "1020x130x39",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -776,7 +776,7 @@ export const products = [
     "dimensions": "1020x130x40",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -802,7 +802,7 @@ export const products = [
     "dimensions": "1020x130x41",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -828,7 +828,7 @@ export const products = [
     "dimensions": "1020x130x42",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -854,7 +854,7 @@ export const products = [
     "dimensions": "1020x130x43",
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -880,7 +880,7 @@ export const products = [
     "dimensions": "580x132x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -906,7 +906,7 @@ export const products = [
     "dimensions": "610x132x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -932,7 +932,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -958,7 +958,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -984,7 +984,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1010,7 +1010,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1036,7 +1036,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1062,7 +1062,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1088,7 +1088,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1114,7 +1114,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1140,7 +1140,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1166,7 +1166,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1192,7 +1192,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1218,7 +1218,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1244,7 +1244,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1270,7 +1270,7 @@ export const products = [
     "dimensions": "600x100x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1296,7 +1296,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1322,7 +1322,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1348,7 +1348,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1374,7 +1374,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1400,7 +1400,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1426,7 +1426,7 @@ export const products = [
     "dimensions": "500x98x15",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1452,7 +1452,7 @@ export const products = [
     "dimensions": "15x120x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1478,7 +1478,7 @@ export const products = [
     "dimensions": "15x120x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1504,7 +1504,7 @@ export const products = [
     "dimensions": "15x120x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1530,7 +1530,7 @@ export const products = [
     "dimensions": "15x90x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1556,7 +1556,7 @@ export const products = [
     "dimensions": "15x90x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1582,7 +1582,7 @@ export const products = [
     "dimensions": "15x90x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1608,7 +1608,7 @@ export const products = [
     "dimensions": "16x120x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1634,7 +1634,7 @@ export const products = [
     "dimensions": "15x90x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1660,7 +1660,7 @@ export const products = [
     "dimensions": "15x120x1500(300-1200)",
     "price": null,
     "inStock": true,
-    "image": "/images/massive.png",
+    "image": "/images/massive.webp",
     "description": "",
     "specs": [
       {
@@ -1686,7 +1686,7 @@ export const products = [
     "dimensions": "120x56x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1712,7 +1712,7 @@ export const products = [
     "dimensions": "120x56x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1738,7 +1738,7 @@ export const products = [
     "dimensions": "118x55x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1764,7 +1764,7 @@ export const products = [
     "dimensions": "118x55x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1790,7 +1790,7 @@ export const products = [
     "dimensions": "118x55x14",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1816,7 +1816,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1842,7 +1842,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1868,7 +1868,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1894,7 +1894,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1920,7 +1920,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1946,7 +1946,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1972,7 +1972,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -1998,7 +1998,7 @@ export const products = [
     "dimensions": "1080x148x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2024,7 +2024,7 @@ export const products = [
     "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2050,7 +2050,7 @@ export const products = [
     "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2076,7 +2076,7 @@ export const products = [
     "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2102,7 +2102,7 @@ export const products = [
     "dimensions": "1080x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2128,7 +2128,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2154,7 +2154,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2180,7 +2180,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2206,7 +2206,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2232,7 +2232,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2258,7 +2258,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2284,7 +2284,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2310,7 +2310,7 @@ export const products = [
     "dimensions": "2190x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2336,7 +2336,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2362,7 +2362,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2388,7 +2388,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2414,7 +2414,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2440,7 +2440,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2466,7 +2466,7 @@ export const products = [
     "dimensions": "1090x182x13,3",
     "price": null,
     "inStock": true,
-    "image": "/images/engineered.png",
+    "image": "/images/engineered.webp",
     "description": "",
     "specs": [
       {
@@ -2492,7 +2492,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2510,7 +2510,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2528,7 +2528,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2546,7 +2546,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2564,7 +2564,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2582,7 +2582,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2600,7 +2600,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2618,7 +2618,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2636,7 +2636,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2654,7 +2654,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2672,7 +2672,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2690,7 +2690,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2708,7 +2708,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2726,7 +2726,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2744,7 +2744,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2762,7 +2762,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2780,7 +2780,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2798,7 +2798,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2816,7 +2816,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {
@@ -2834,7 +2834,7 @@ export const products = [
     "dimensions": null,
     "price": null,
     "inStock": true,
-    "image": "/images/chemistry.png",
+    "image": "/images/chemistry.webp",
     "description": "",
     "specs": [
       {

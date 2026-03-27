@@ -67,6 +67,7 @@ const QuizModal = ({ isOpen, onClose, products }) => {
         {/* Close Button */}
         <button 
           onClick={onClose}
+          aria-label="Bağla"
           className="absolute top-6 right-6 text-white/30 hover:text-white transition-colors z-10"
         >
           <X size={24} strokeWidth={1.5} />

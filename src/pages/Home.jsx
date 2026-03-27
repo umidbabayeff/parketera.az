@@ -78,7 +78,7 @@ const Home = () => {
                  className="relative aspect-video bg-neutral-900 border border-white/5 overflow-hidden"
                >
                  <img 
-                   src="/images/about.png" 
+                   src="/images/about.webp" 
                    alt="Quiz Assistant" 
                    className="w-full h-full object-cover opacity-60"
                  />

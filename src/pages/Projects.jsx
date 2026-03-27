@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const projects = [
-  { id: 1, title: 'Baku White City Resident', image: '/images/project1.png', category: 'Modern' },
-  { id: 2, title: 'Port Baku Residence', image: '/images/project2.png', category: 'Classic' },
-  { id: 3, title: 'Sea Breeze Villa', image: '/images/hero.png', category: 'Luxury' },
-  { id: 4, title: 'Yasamal Office Center', image: '/images/massive.png', category: 'Corporate' }
+  { id: 1, title: 'Baku White City Resident', image: '/images/project1.webp', category: 'Modern' },
+  { id: 2, title: 'Port Baku Residence', image: '/images/project2.webp', category: 'Classic' },
+  { id: 3, title: 'Sea Breeze Villa', image: '/images/hero.webp', category: 'Luxury' },
+  { id: 4, title: 'Yasamal Office Center', image: '/images/massive.webp', category: 'Corporate' }
 ];
 
 const Projects = () => {

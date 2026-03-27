@@ -59,6 +59,7 @@ const ProductCard = ({ product, index = 0 }) => {
           e.stopPropagation();
           addToCart(product, 1);
         }}
+        aria-label={`${product.name} - ${t('cart.add')}`}
         className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center transition-all bg-black/40 text-white border border-white/10 hover:border-accent-gold hover:text-accent-gold backdrop-blur-md rounded-none"
         title={t('cart.add')}
       >
@@ -76,6 +77,7 @@ const ProductCard = ({ product, index = 0 }) => {
             addToCompare(product);
           }
         }}
+        aria-label={`${product.name} - ${isCompared ? t('compare.remove') : t('compare.add')}`}
         className={`absolute top-4 left-4 z-20 w-10 h-10 flex items-center justify-center transition-all ${isCompared ? 'bg-accent-gold text-black border-accent-gold' : 'bg-black/40 text-white border-white/10 hover:border-accent-gold hover:text-accent-gold backdrop-blur-md'} border rounded-none`}
         title={t('compare.add')}
       >

@@ -27,7 +27,7 @@ const Hero = () => {
       const img = new Image();
       const actualFrame = ((i - 1) * 4) + 1;
       const formattedId = actualFrame.toString().padStart(3, '0');
-      img.src = `/images/hero_frames/ezgif-frame-${formattedId}.jpg`;
+      img.src = `/images/hero_frames/ezgif-frame-${formattedId}.webp`;
       img.onload = () => {
         loadedCount++;
         if (loadedCount === totalFrames) {
@@ -78,7 +78,7 @@ const Hero = () => {
       {/* Canvas Background Sequence (Desktop) or Static Image (Mobile) */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isLoaded ? 'opacity-60' : 'opacity-0'}`}>
         <img 
-          src="/images/hero_frames/ezgif-frame-001.jpg" 
+          src="/images/hero_frames/ezgif-frame-001.webp" 
           alt="Parketera Premium" 
           className="w-full h-full object-cover md:hidden" 
         />

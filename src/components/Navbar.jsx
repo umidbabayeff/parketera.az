@@ -66,8 +66,8 @@ const Navbar = () => {
     <>
       <nav className={`fixed top-0 left-0 w-full z-50 ${isScrolled ? 'py-2 bg-black/90 backdrop-blur-2xl border-b border-white/5' : 'py-5 bg-black/40 backdrop-blur-sm'}`}>
         <div className="max-w-[1600px] px-8 md:px-12 mx-auto flex justify-between items-center">
-        <Link to="/" className="group flex items-center h-[50px] md:h-[60px]">
-          <div className="logo-golden w-[140px] sm:w-[220px] md:w-[280px] h-full" />
+        <Link to="/" aria-label="Parketera - Ana Səhifə" className="group flex items-center h-[50px] md:h-[60px]">
+          <div className="logo-golden w-[140px] sm:w-[220px] md:w-[280px] h-full" role="img" aria-label="Parketera Loqosu" />
         </Link>
 
         {/* Desktop Menu */}
@@ -103,6 +103,7 @@ const Navbar = () => {
               <div className="relative mr-2">
                 <button 
                   onClick={() => setIsCompareOpen(!isCompareOpen)}
+                  aria-label={`${t('compare.view')} (${comparedProducts.length})`}
                   className={`relative p-2 transition-colors ${isCompareOpen ? 'text-accent-gold' : 'text-white/60 hover:text-accent-gold'}`}
                 >
                   <BarChart2 size={20} />
@@ -119,6 +120,7 @@ const Navbar = () => {
             <div className="relative mr-4 border-l border-white/10 pl-6 h-10 flex items-center">
               <button 
                 onClick={() => setIsCartOpen(!isCartOpen)}
+                aria-label={`${t('cart.title')} (${getCartCount()})`}
                 className={`relative p-2 transition-colors ${isCartOpen ? 'text-accent-gold' : 'text-white/60 hover:text-accent-gold'}`}
               >
                 <ShoppingBag size={20} />
@@ -141,7 +143,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-4 sm:gap-6 lg:hidden">
             {getCartCount() > 0 && (
-              <button onClick={() => setIsCartOpen(true)} className="relative p-2 text-accent-gold transition-transform active:scale-95">
+              <button onClick={() => setIsCartOpen(true)} aria-label={`${t('cart.title')} (${getCartCount()})`} className="relative p-2 text-accent-gold transition-transform active:scale-95">
                 <ShoppingBag size={24} />
                 <span className="absolute -top-1 -right-1 bg-accent-gold text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-black">
                   {getCartCount()}
@@ -149,7 +151,7 @@ const Navbar = () => {
               </button>
             )}
             {comparedProducts.length >= 2 && (
-              <Link to="/muqayise" className="relative p-2 text-accent-gold transition-transform active:scale-95">
+              <Link to="/muqayise" aria-label={`${t('compare.view')} (${comparedProducts.length})`} className="relative p-2 text-accent-gold transition-transform active:scale-95">
                 <BarChart2 size={24} />
                 <span className="absolute -top-1 -right-1 bg-accent-gold text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-black">
                   {comparedProducts.length}
@@ -157,6 +159,7 @@ const Navbar = () => {
               </Link>
             )}
             <button 
+              aria-label={isMobileMenuOpen ? 'Menyunu bağla' : 'Menyunu aç'}
               className="text-white p-2 transition-transform active:scale-95 ml-2" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -175,7 +178,7 @@ const Navbar = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 top-0 left-0 w-full h-screen bg-black z-40 lg:hidden flex flex-col items-center justify-center gap-10"
           >
-            <button className="absolute top-10 right-8 text-white" onClick={() => setIsMobileMenuOpen(false)}>
+            <button aria-label="Menyunu bağla" className="absolute top-10 right-8 text-white" onClick={() => setIsMobileMenuOpen(false)}>
               <X size={32} strokeWidth={1} />
             </button>
             {navLinks.map((link, i) => (
@@ -253,6 +256,7 @@ const Navbar = () => {
                     </div>
                     <button 
                       onClick={() => removeFromCompare(product.id)}
+                      aria-label={`${product.name} - müqayisədən sil`}
                       className="text-white/20 hover:text-red-500 transition-colors"
                     >
                       <Trash2 size={14} />

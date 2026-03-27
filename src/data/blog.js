@@ -3,7 +3,7 @@ export const blogPosts = [
     id: 1,
     slug: 'bambuk-parketi-qulluq',
     date: '2024-03-27',
-    image: '/images/hero.png',
+    image: '/images/hero.webp',
     az: {
       category: 'Qulluq',
       title: 'Bambuk parketinə necə qulluq etməli?',
@@ -48,7 +48,7 @@ export const blogPosts = [
     id: 2,
     slug: 'parket-trendleri-2026',
     date: '2024-03-25',
-    image: '/images/massive.png',
+    image: '/images/massive.webp',
     az: {
       category: 'Trendlər',
       title: '2026-cı ilin döşəmə trendləri',
