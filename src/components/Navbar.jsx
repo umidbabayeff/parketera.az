@@ -110,57 +110,7 @@ const Navbar = () => {
                   </span>
                 </button>
 
-                <AnimatePresence>
-                  {isCompareOpen && (
-                    <>
-                      <div className="fixed inset-0 z-[-1]" onClick={() => setIsCompareOpen(false)} />
-                      <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute top-full right-0 mt-6 w-80 bg-neutral-900 border border-white/10 shadow-2xl p-6 backdrop-blur-xl origin-top-right"
-                      >
-                        <div className="flex justify-between items-center mb-6">
-                          <h4 className="text-white text-xs uppercase tracking-widest font-bold">
-                            {t('compare.title')}
-                          </h4>
-                          <button onClick={clearComparison} className="text-white/40 hover:text-white text-[10px] uppercase font-bold transition-colors">
-                            {t('compare.clear')}
-                          </button>
-                        </div>
-                        
-                        <div className="space-y-4 mb-8 max-h-60 overflow-y-auto custom-scrollbar pr-2">
-                          {comparedProducts.map(product => (
-                            <div key={product.id} className="flex items-center gap-4 group">
-                              <div className="w-12 h-12 bg-black border border-white/5 overflow-hidden shrink-0">
-                                <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-60" />
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-white text-[11px] font-bold truncate uppercase tracking-widest leading-tight">{product.name}</p>
-                                <p className="text-accent-gold text-[10px] font-bold">{product.price} ₼</p>
-                              </div>
-                              <button 
-                                onClick={() => removeFromCompare(product.id)}
-                                className="text-white/20 hover:text-red-500 transition-colors"
-                              >
-                                <Trash2 size={14} />
-                              </button>
-                            </div>
-                          ))}
-                        </div>
 
-                        <Link 
-                          to="/muqayise" 
-                          onClick={() => setIsCompareOpen(false)}
-                          className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-[10px] uppercase tracking-widest"
-                        >
-                          <span>{t('compare.view')}</span>
-                          <ArrowRight size={14} />
-                        </Link>
-                      </motion.div>
-                    </>
-                  )}
-                </AnimatePresence>
               </div>
             )}
 
@@ -178,72 +128,7 @@ const Navbar = () => {
                 )}
               </button>
 
-              <AnimatePresence>
-                {isCartOpen && (
-                  <>
-                    <div className="fixed inset-0 z-[-1]" onClick={() => setIsCartOpen(false)} />
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute top-full right-0 mt-6 w-96 bg-neutral-900 border border-white/10 shadow-2xl p-6 backdrop-blur-xl origin-top-right box-content"
-                    >
-                      <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-6">
-                        {t('cart.title')}
-                      </h4>
-                      
-                      {cartItems.length === 0 ? (
-                        <div className="py-12 text-center">
-                          <ShoppingBag size={40} className="mx-auto text-white/10 mb-4" />
-                          <p className="text-white/40 text-[10px] uppercase tracking-widest">{t('cart.empty')}</p>
-                        </div>
-                      ) : (
-                        <>
-                          <div className="space-y-4 mb-8 max-h-[400px] overflow-y-auto custom-scrollbar pr-2">
-                            {cartItems.map(item => (
-                              <div key={item.id} className="flex items-center gap-4 group border-b border-white/5 pb-4 last:border-0">
-                                <Link to={`/mehsul/${item.id}`} className="w-16 h-16 bg-black border border-white/5 overflow-hidden shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-60" />
-                                </Link>
-                                <div className="flex-1 min-w-0">
-                                  <Link to={`/mehsul/${item.id}`} className="text-white text-[11px] font-bold truncate uppercase tracking-widest leading-tight block hover:text-accent-gold transition-colors">
-                                    {item.name}
-                                  </Link>
-                                  <div className="flex justify-between items-center mt-2">
-                                    <p className="text-white/40 text-[10px]">{item.quantity} {item.unit || 'm²'}</p>
-                                    <p className="text-accent-gold text-[11px] font-bold">{((item.price || 0) * item.quantity).toFixed(2)} ₼</p>
-                                  </div>
-                                </div>
-                                <button 
-                                  onClick={() => removeFromCart(item.id)}
-                                  className="text-white/20 hover:text-red-500 transition-colors"
-                                >
-                                  <Trash2 size={16} />
-                                </button>
-                              </div>
-                            ))}
-                          </div>
 
-                          <div className="border-t border-white/10 pt-6 mb-6">
-                            <div className="flex justify-between items-center">
-                              <span className="text-white/40 text-[10px] uppercase tracking-widest">{t('cart.total')}</span>
-                              <span className="text-white font-display text-xl">{getCartTotal().toFixed(2)} ₼</span>
-                            </div>
-                          </div>
-
-                          <button 
-                            onClick={handleCheckout}
-                            className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-[11px] uppercase tracking-widest"
-                          >
-                            <span>{t('cart.checkout')}</span>
-                            <ArrowRight size={14} />
-                          </button>
-                        </>
-                      )}
-                    </motion.div>
-                  </>
-                )}
-              </AnimatePresence>
             </div>
 
             <a href="tel:+994702772240" className="btn-primary flex items-center gap-3 px-8 py-4 rounded-none uppercase tracking-[0.2em] text-[12px]">
@@ -331,6 +216,126 @@ const Navbar = () => {
               </div>
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Relocated Modals for Mobile Access */}
+      <AnimatePresence>
+        {isCompareOpen && (
+          <>
+            <div className="fixed inset-0 z-[45]" onClick={() => setIsCompareOpen(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              className="absolute top-[80px] md:top-[90px] right-4 md:right-12 w-[calc(100vw-2rem)] md:w-80 bg-neutral-900 border border-white/10 shadow-2xl p-6 backdrop-blur-xl origin-top-right z-50"
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h4 className="text-white text-xs uppercase tracking-widest font-bold">
+                  {t('compare.title')}
+                </h4>
+                <button onClick={clearComparison} className="text-white/40 hover:text-white text-[10px] uppercase font-bold transition-colors">
+                  {t('compare.clear')}
+                </button>
+              </div>
+              
+              <div className="space-y-4 mb-8 max-h-60 overflow-y-auto custom-scrollbar pr-2">
+                {comparedProducts.map(product => (
+                  <div key={product.id} className="flex items-center gap-4 group">
+                    <div className="w-12 h-12 bg-black border border-white/5 overflow-hidden shrink-0">
+                      <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-60" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white text-[11px] font-bold truncate uppercase tracking-widest leading-tight">{product.name}</p>
+                      <p className="text-accent-gold text-[10px] font-bold">{product.price} ₼</p>
+                    </div>
+                    <button 
+                      onClick={() => removeFromCompare(product.id)}
+                      className="text-white/20 hover:text-red-500 transition-colors"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <Link 
+                to="/muqayise" 
+                onClick={() => setIsCompareOpen(false)}
+                className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-[10px] uppercase tracking-widest"
+              >
+                <span>{t('compare.view')}</span>
+                <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isCartOpen && (
+          <>
+            <div className="fixed inset-0 z-[45]" onClick={() => setIsCartOpen(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              className="absolute top-[80px] md:top-[90px] right-4 md:right-12 w-[calc(100vw-2rem)] md:w-96 bg-neutral-900 border border-white/10 shadow-2xl p-6 backdrop-blur-xl origin-top-right box-content z-50"
+            >
+              <h4 className="text-white text-xs uppercase tracking-widest font-bold mb-6">
+                {t('cart.title')}
+              </h4>
+              
+              {cartItems.length === 0 ? (
+                <div className="py-12 text-center">
+                  <ShoppingBag size={40} className="mx-auto text-white/10 mb-4" />
+                  <p className="text-white/40 text-[10px] uppercase tracking-widest">{t('cart.empty')}</p>
+                </div>
+              ) : (
+                <>
+                  <div className="space-y-4 mb-8 max-h-[400px] overflow-y-auto custom-scrollbar pr-2">
+                    {cartItems.map(item => (
+                      <div key={item.id} className="flex items-center gap-4 group border-b border-white/5 pb-4 last:border-0">
+                        <Link to={`/mehsul/${item.id}`} className="w-16 h-16 bg-black border border-white/5 overflow-hidden shrink-0">
+                          <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-60" />
+                        </Link>
+                        <div className="flex-1 min-w-0">
+                          <Link to={`/mehsul/${item.id}`} className="text-white text-[11px] font-bold truncate uppercase tracking-widest leading-tight block hover:text-accent-gold transition-colors">
+                            {item.name}
+                          </Link>
+                          <div className="flex justify-between items-center mt-2">
+                            <p className="text-white/40 text-[10px]">{item.quantity} {item.unit || 'm²'}</p>
+                            <p className="text-accent-gold text-[11px] font-bold">{((item.price || 0) * item.quantity).toFixed(2)} ₼</p>
+                          </div>
+                        </div>
+                        <button 
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-white/20 hover:text-red-500 transition-colors"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="border-t border-white/10 pt-6 mb-6">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/40 text-[10px] uppercase tracking-widest">{t('cart.total')}</span>
+                      <span className="text-white font-display text-xl">{getCartTotal().toFixed(2)} ₼</span>
+                    </div>
+                  </div>
+
+                  <button 
+                    onClick={handleCheckout}
+                    className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-[11px] uppercase tracking-widest"
+                  >
+                    <span>{t('cart.checkout')}</span>
+                    <ArrowRight size={14} />
+                  </button>
+                </>
+              )}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
