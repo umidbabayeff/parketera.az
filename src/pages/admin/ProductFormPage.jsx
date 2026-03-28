@@ -173,7 +173,17 @@ const ProductFormPage = () => {
             <label className="block text-white/70 text-sm mb-2">Məhsul Şəkli</label>
             <div className="flex gap-4 items-center">
               {formData.image && (
-                <img src={formData.image} alt="Preview" className="w-16 h-16 object-cover rounded bg-white/10 border border-white/5" />
+                <div className="relative shrink-0">
+                  <img src={formData.image} alt="Preview" className="w-16 h-16 object-cover rounded bg-white/10 border border-white/5" />
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, image: '' })}
+                    className="absolute -top-2 -right-2 w-5 h-5 bg-red-600 hover:bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold transition-colors"
+                    title="Şəkli sil"
+                  >
+                    ×
+                  </button>
+                </div>
               )}
               <div className="flex-1">
                 <input 
@@ -186,6 +196,7 @@ const ProductFormPage = () => {
                 {uploading && <span className="text-white/50 text-xs mt-2 block">Şəkil yüklənir... Gözləyin</span>}
               </div>
             </div>
+
           </div>
         </div>
 
