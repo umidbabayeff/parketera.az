@@ -21,7 +21,7 @@ const CategoryDetail = () => {
 
   const fetchCategoryProducts = async () => {
     setLoading(true);
-    const { data, error } = await supabase.from('products').select('*').eq('categoryId', parseInt(id));
+    const { data, error } = await supabase.from('products').select('*').eq('categoryId', parseInt(id)).eq('inStock', true);
     if (data) {
       setProducts(data.map(p => ({
         ...p,

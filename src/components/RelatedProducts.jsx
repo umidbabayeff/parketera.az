@@ -37,7 +37,7 @@ const RelatedProducts = ({ categoryId, currentPrice, currentId }) => {
 
     // Dynamic column selection (try to be smart)
     // Based on subagent logs, 'categoryId' is the correct column name.
-    query = query.eq('categoryId', categoryId);
+    query = query.eq('categoryId', categoryId).eq('inStock', true);
 
     if (currentPrice) {
       const minPrice = currentPrice * 0.7;

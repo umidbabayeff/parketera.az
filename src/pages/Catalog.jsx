@@ -21,7 +21,7 @@ const Catalog = () => {
 
   const fetchProducts = async () => {
     setLoading(true);
-    const { data, error } = await supabase.from('products').select('*').order('id', { ascending: false });
+    const { data, error } = await supabase.from('products').select('*').eq('inStock', true).order('id', { ascending: false });
     if (data) {
       setProducts(data.map(p => ({
         ...p,

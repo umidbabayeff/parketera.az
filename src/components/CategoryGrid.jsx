@@ -17,7 +17,7 @@ const CategoryGrid = () => {
 
   useEffect(() => {
     async function fetchCounts() {
-      const { data, error } = await supabase.from('products').select('categoryId');
+      const { data, error } = await supabase.from('products').select('categoryId').eq('inStock', true);
       if (!error && data) {
         const counts = {};
         data.forEach(p => {

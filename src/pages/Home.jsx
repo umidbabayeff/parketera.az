@@ -15,7 +15,7 @@ const Home = () => {
 
   React.useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await supabase.from('products').select('*');
+      const { data } = await supabase.from('products').select('*').eq('inStock', true);
       if (data) setProducts(data);
     };
     fetchProducts();

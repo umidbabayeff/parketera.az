@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Check, BarChart2, ShoppingBag } from 'lucide-react';
@@ -11,6 +11,8 @@ const ProductCard = ({ product, index = 0 }) => {
   const { addToCompare, removeFromCompare, comparedProducts } = useComparison();
   const { addToCart } = useCart();
   const isCompared = comparedProducts.some(p => p.id === product.id);
+  const [added, setAdded] = useState(false);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -58,13 +60,20 @@ const ProductCard = ({ product, index = 0 }) => {
           e.preventDefault();
           e.stopPropagation();
           addToCart(product, 1);
+          setAdded(true);
+          setTimeout(() => setAdded(false), 1500);
         }}
         aria-label={`${product.name} - ${t('cart.add')}`}
-        className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center transition-all bg-black/40 text-white border border-white/10 hover:border-accent-gold hover:text-accent-gold backdrop-blur-md rounded-none"
+        className={`absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center transition-all border rounded-none backdrop-blur-md ${
+          added 
+            ? 'bg-green-600 text-white border-green-500 scale-110' 
+            : 'bg-black/40 text-white border-white/10 hover:border-accent-gold hover:text-accent-gold'
+        }`}
         title={t('cart.add')}
       >
-        <ShoppingBag size={16} />
+        {added ? <Check size={16} strokeWidth={3} /> : <ShoppingBag size={16} />}
       </button>
+
 
       {/* Comparison Toggle */}
       <button 
